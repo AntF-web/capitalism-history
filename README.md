@@ -1,6 +1,6 @@
-# History of Capitalism — Bilingual Interactive Timeline
+# History of Capitalism — Bilingual Interactive World Map
 
-A GitHub Pages-ready bilingual interactive timeline about historical events and institutions that helped build capitalism.
+A GitHub Pages-ready bilingual interactive world map about historical events, places, and flows that helped build capitalism.
 
 ## Languages
 
@@ -9,12 +9,12 @@ The app includes language buttons:
 - **EN** — English
 - **FR** — Français
 
-The selected language is saved in `localStorage`, so the app remembers the user's choice.
+The selected language is saved in `localStorage`.
 
 ## Files
 
 ```text
-capitalism-history-timeline-bilingual/
+capitalism-history-world-map-bilingual/
 ├── index.html
 ├── style.css
 ├── script.js
@@ -23,30 +23,37 @@ capitalism-history-timeline-bilingual/
 
 ## Features
 
-- Horizontal scrolling timeline
+- Large interactive world map as the main element
+- Chronological event buttons
+- Bottom timeline strip
+- Clickable historical places
+- Animated flows between places
 - Language switcher: English / French
-- Clickable event cards
-- Search bar
-- Filters:
+- System filters:
   - trade / commerce
   - finance
   - slavery / esclavage
   - industry / industrie
   - state / État
   - labor / travail
-- Context tabs for each event:
+- Toggle buttons:
+  - flows on/off
+  - places on/off
+- Critical context tabs:
   - What it built / Ce que cela construit
   - Who benefited / Qui en bénéficie
   - Who paid / Qui paie
   - Capitalist link / Lien avec le capitalisme
   - Critical note / Note critique
-- Dark visual design matching the previous project style
 
 ## How to run locally
 
 Open `index.html` in a browser.
 
-No build step is required.
+Internet is required because the app uses:
+
+- Leaflet CDN
+- CARTO basemap tiles
 
 ## How to publish on GitHub Pages
 
@@ -69,41 +76,38 @@ Your site will be available at:
 https://YOUR-USERNAME.github.io/YOUR-REPOSITORY-NAME/
 ```
 
-## How to edit translations
+## How to add a new event
 
 Open `script.js`.
 
-Static interface text is stored in the `i18n` object:
+Each event contains:
 
-```js
-const i18n = {
-  en: { ... },
-  fr: { ... }
-}
-```
+- year
+- category
+- tags
+- places
+- flows
+- English text
+- French text
 
-Timeline event text is stored directly in each event:
+Example:
 
 ```js
 {
   year: "1602",
   category: "finance",
   tags: ["VOC", "shares", "corporation"],
-  en: {
-    title: "...",
-    summary: "...",
-    detail: "...",
-    contexts: { ... }
-  },
-  fr: {
-    title: "...",
-    summary: "...",
-    detail: "...",
-    contexts: { ... }
-  }
+  places: [
+    place("amsterdam", "Amsterdam", "Amsterdam", 52.37, 4.90, "Role in English", "Rôle en français")
+  ],
+  flows: [
+    flow("amsterdam", "batavia", "finance", 3, "Flow label in English", "Libellé du flux en français")
+  ],
+  en: { ... },
+  fr: { ... }
 }
 ```
 
-## Source note
+## Note
 
-This is a critical historical interpretation, not a claim that capitalism started on one exact date.
+The flows are interpretive historical routes, not exact shipping paths.
