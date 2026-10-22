@@ -1,113 +1,36 @@
-# History of Capitalism — Bilingual Interactive World Map
+# Capitalism History — offline vector map edition
 
-A GitHub Pages-ready bilingual interactive world map about historical events, places, and flows that helped build capitalism.
+A bilingual EN/FR interactive capitalism timeline, with a compact **locally bundled vector world map**.
 
-## Languages
+- No Leaflet or external libraries
+- No map tiles, internet, account or API key required
+- Real country/coastline shapes from a Natural Earth low-resolution dataset, bundled in `world-data.js`
+- Scroll-to-zoom, click-drag panning, plus/minus buttons, reset button
+- Click historical sites and routes to read their context
+- Chronological event navigation + critical descriptions remain central
+- French BCE replacement: `AV J-C`
 
-The app includes language buttons:
+The map depicts **illustrative historical connections** and generalized locations, not precisely reconstructed shipping paths or measured flows. "Global South" etc. are representative geographic placements, not exact point locations.
 
-- **EN** — English
-- **FR** — Français
+## Deploy to GitHub Pages
+Upload `index.html`, `style.css`, `script.js`, `world-data.js`, and `README.md` to the repository root. Go to Settings > Pages > Deploy from a branch > main > /root. No build step.
 
-The selected language is saved in `localStorage`.
+## Attribution
+Country boundaries/coastlines: Natural Earth public-domain geographic data (low-resolution shapefile distributed with pyogrio test fixtures). No runtime network calls.
 
-## Files
+## Adaptive map and place labels
+The map automatically zooms to each selected event's locations, including closer zoom for nearby cities. Event place and region labels are always visible in EN or FR. Manual zoom, drag, and reset remain available. Country geometry is bundled and needs no API or network connection.
 
-```text
-capitalism-history-world-map-bilingual/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
+## Readability update
+Place markers are small and stay the same apparent size as the map zooms. Names have larger high-contrast type with a dark outline, remain readable on desktop, and switch with EN/FR. The map still automatically fits each event.
 
-## Features
+## Map readability update
+Medium-size location markers with a contrasting white border and short visible labels. Label positions are clamped within the map view when zooming or panning. Full place names and descriptions remain available by clicking the dots.
 
-- Large interactive world map as the main element
-- Chronological event buttons
-- Bottom timeline strip
-- Clickable historical places
-- Animated flows between places
-- Language switcher: English / French
-- System filters:
-  - trade / commerce
-  - finance
-  - slavery / esclavage
-  - industry / industrie
-  - state / État
-  - labor / travail
-- Toggle buttons:
-  - flows on/off
-  - places on/off
-- Critical context tabs:
-  - What it built / Ce que cela construit
-  - Who benefited / Qui en bénéficie
-  - Who paid / Qui paie
-  - Capitalist link / Lien avec le capitalisme
-  - Critical note / Note critique
+## Event/map correspondence fix
+All 24 chronological entries now map to the correct places; the seven missing events have new data.
+1492 no longer displays later Potosí extraction; 1602 no longer labels Batavia (founded 1619) as existing at that date.
+Routes are illustrative; events without a factual movement/flow now use accurate location-only maps.
 
-## How to run locally
-
-Open `index.html` in a browser.
-
-Internet is required because the app uses:
-
-- Leaflet CDN
-- CARTO basemap tiles
-
-## How to publish on GitHub Pages
-
-1. Create a new GitHub repository.
-2. Upload:
-   - `index.html`
-   - `style.css`
-   - `script.js`
-   - `README.md`
-3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose:
-   - Source: **Deploy from a branch**
-   - Branch: **main**
-   - Folder: **/root**
-5. Save.
-
-Your site will be available at:
-
-```text
-https://YOUR-USERNAME.github.io/YOUR-REPOSITORY-NAME/
-```
-
-## How to add a new event
-
-Open `script.js`.
-
-Each event contains:
-
-- year
-- category
-- tags
-- places
-- flows
-- English text
-- French text
-
-Example:
-
-```js
-{
-  year: "1602",
-  category: "finance",
-  tags: ["VOC", "shares", "corporation"],
-  places: [
-    place("amsterdam", "Amsterdam", "Amsterdam", 52.37, 4.90, "Role in English", "Rôle en français")
-  ],
-  flows: [
-    flow("amsterdam", "batavia", "finance", 3, "Flow label in English", "Libellé du flux en français")
-  ],
-  en: { ... },
-  fr: { ... }
-}
-```
-
-## Note
-
-The flows are interpretive historical routes, not exact shipping paths.
+## Layout update
+Map panel appears to the left of the event description on desktop. On narrow screens, the map stacks above the description.

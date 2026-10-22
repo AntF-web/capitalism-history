@@ -3,27 +3,56 @@ const i18n = {
     eyebrow: "Critical economic history",
     heroTitleLine1: "How Capitalism",
     heroTitleLine2: "Was Built",
-    heroLead: "A chronological world map of markets, banks, colonial extraction, slavery, factories, corporations, debt, finance, and digital platforms.",
-    timelineTitle: "Chronological events",
-    filtersTitle: "System filter",
-    mapControlsTitle: "Map layers",
-    toggleFlows: "Flows on",
-    toggleFlowsOff: "Flows off",
-    togglePlaces: "Places on",
-    togglePlacesOff: "Places off",
-    mapNote: "Flows are interpretive historical routes, not exact shipping paths.",
-    selectedEventTitle: "Selected event",
-    selectedPlaceTitle: "Places in this event",
-    contextTitle: "Critical context",
-    legendTitle: "Legend",
-    legendTrade: "Trade / market routes",
-    legendFinance: "Banking / finance",
-    legendSlavery: "Slavery / forced labor",
-    legendIndustry: "Industry / infrastructure",
-    legendState: "State / empire",
-    legendLabor: "Labor struggle",
-    overlayTitle: "Chronological world map",
-    overlayText: "Choose an event on the left. The map jumps to its historical places and draws the flows that connect markets, colonies, banks, plantations, factories, and financial centers.",
+    heroLead: "A chronological timeline of markets, banks, colonial extraction, slavery, factories, corporations, debt, finance, and digital platforms. This is not a story of one invention, but of many institutions and violences becoming one world system.",
+    exploreButton: "Explore timeline ↓",
+    layersButton: "View system layers",
+    coreCapital: "CAPITAL",
+    tagBanks: "BANKS",
+    tagLabor: "LABOR",
+    tagEmpire: "EMPIRE",
+    tagMarkets: "MARKETS",
+    statMarketsTitle: "Markets",
+    statMarketsText: "Exchange becomes organized through price, money, and trade.",
+    statEmpireTitle: "Empire",
+    statEmpireText: "Colonies, slavery, and extraction feed accumulation.",
+    statFinanceTitle: "Finance",
+    statFinanceText: "Credit, shares, bonds, banks, and debt scale the system.",
+    timelineTitle: "Chronological timeline",
+    timelineIntro: "Click an event to open its historical, labor, colonial, and financial context. Filter by system layer or search by keyword.",
+    systemMapTitle: "System map",
+    centerNode: "Capital accumulation",
+    miniMarkets: "Markets",
+    miniBanks: "Banks",
+    miniColonies: "Colonies",
+    miniLabor: "Labor",
+    miniFactories: "Factories",
+    miniDebt: "Debt",
+    layersTitle: "System layers",
+    layersIntro: "Capitalism was built through overlapping layers. Each layer has its own institutions, conflicts, and historical violence.",
+    layerPropertyTitle: "Property",
+    layerPropertyText: "Land, labor, ideas, and resources are turned into ownable and sellable assets.",
+    layerTradeTitle: "Trade",
+    layerTradeText: "Long-distance trade links local production to global markets and colonial routes.",
+    layerBankingTitle: "Banking",
+    layerBankingText: "Credit, deposits, public debt, and central banks make accumulation scalable.",
+    layerSlaveryTitle: "Slavery",
+    layerSlaveryText: "Forced labor, plantation economies, and racial domination generate enormous wealth.",
+    layerIndustryTitle: "Industry",
+    layerIndustryText: "Factories reorganize time, labor, machines, cities, and discipline around production.",
+    layerFinanceTitle: "Finance",
+    layerFinanceText: "Stocks, bonds, speculation, derivatives, debt, and crises become engines of power.",
+    noteLabel: "Note:",
+    footerNote: "This timeline is interpretive and critical. It does not claim that capitalism began at one exact moment. It shows major institutions and historical processes that helped build the capitalist world-system.",
+    selectedEvent: "Selected event",
+    previous: "Previous",
+    next: "Next",
+    mapTitle: "World map",
+    mapCaptionDefault: "Places linked to the selected event.",
+    mapCaptionPlaces: "{places} places · {flows} flows",
+    legendTrade: "Trade",
+    legendFinance: "Finance",
+    legendState: "State",
+    legendSlavery: "Slavery",
     all: "All",
     filterLabels: {
       trade: "trade",
@@ -45,27 +74,56 @@ const i18n = {
     eyebrow: "Histoire économique critique",
     heroTitleLine1: "Comment le capitalisme",
     heroTitleLine2: "s’est construit",
-    heroLead: "Une carte mondiale chronologique des marchés, banques, extractions coloniales, esclavages, usines, corporations, dettes, finances et plateformes numériques.",
-    timelineTitle: "Événements chronologiques",
-    filtersTitle: "Filtrer par système",
-    mapControlsTitle: "Couches de la carte",
-    toggleFlows: "Flux activés",
-    toggleFlowsOff: "Flux désactivés",
-    togglePlaces: "Lieux activés",
-    togglePlacesOff: "Lieux désactivés",
-    mapNote: "Les flux sont des routes historiques interprétatives, pas des trajets maritimes exacts.",
-    selectedEventTitle: "Événement sélectionné",
-    selectedPlaceTitle: "Lieux de cet événement",
-    contextTitle: "Contexte critique",
-    legendTitle: "Légende",
-    legendTrade: "Commerce / routes marchandes",
-    legendFinance: "Banque / finance",
-    legendSlavery: "Esclavage / travail forcé",
-    legendIndustry: "Industrie / infrastructure",
-    legendState: "État / empire",
-    legendLabor: "Luttes du travail",
-    overlayTitle: "Carte mondiale chronologique",
-    overlayText: "Choisissez un événement à gauche. La carte montre ses lieux historiques et trace les flux reliant marchés, colonies, banques, plantations, usines et centres financiers.",
+    heroLead: "Une chronologie des marchés, des banques, de l’extraction coloniale, de l’esclavage, des usines, des corporations, de la dette, de la finance et des plateformes numériques. Ce n’est pas l’histoire d’une seule invention, mais celle de nombreuses institutions et violences devenues un système mondial.",
+    exploreButton: "Explorer la chronologie ↓",
+    layersButton: "Voir les couches du système",
+    coreCapital: "CAPITAL",
+    tagBanks: "BANQUES",
+    tagLabor: "TRAVAIL",
+    tagEmpire: "EMPIRE",
+    tagMarkets: "MARCHÉS",
+    statMarketsTitle: "Marchés",
+    statMarketsText: "L’échange s’organise par les prix, la monnaie et le commerce.",
+    statEmpireTitle: "Empire",
+    statEmpireText: "Colonies, esclavage et extraction nourrissent l’accumulation.",
+    statFinanceTitle: "Finance",
+    statFinanceText: "Crédit, actions, obligations, banques et dette changent l’échelle du système.",
+    timelineTitle: "Chronologie historique",
+    timelineIntro: "Cliquez sur un événement pour ouvrir son contexte historique, colonial, financier et social. Filtrez par couche du système ou recherchez un mot-clé.",
+    systemMapTitle: "Carte du système",
+    centerNode: "Accumulation du capital",
+    miniMarkets: "Marchés",
+    miniBanks: "Banques",
+    miniColonies: "Colonies",
+    miniLabor: "Travail",
+    miniFactories: "Usines",
+    miniDebt: "Dette",
+    layersTitle: "Couches du système",
+    layersIntro: "Le capitalisme s’est construit par couches superposées. Chaque couche possède ses institutions, ses conflits et ses violences historiques.",
+    layerPropertyTitle: "Propriété",
+    layerPropertyText: "La terre, le travail, les idées et les ressources deviennent des actifs possédables et vendables.",
+    layerTradeTitle: "Commerce",
+    layerTradeText: "Le commerce lointain relie les productions locales aux marchés mondiaux et aux routes coloniales.",
+    layerBankingTitle: "Banque",
+    layerBankingText: "Le crédit, les dépôts, la dette publique et les banques centrales rendent l’accumulation scalable.",
+    layerSlaveryTitle: "Esclavage",
+    layerSlaveryText: "Le travail forcé, les plantations et la domination raciale produisent d’immenses richesses.",
+    layerIndustryTitle: "Industrie",
+    layerIndustryText: "Les usines réorganisent le temps, le travail, les machines, les villes et la discipline productive.",
+    layerFinanceTitle: "Finance",
+    layerFinanceText: "Actions, obligations, spéculation, produits dérivés, dette et crises deviennent des moteurs de pouvoir.",
+    noteLabel: "Note :",
+    footerNote: "Cette chronologie est interprétative et critique. Elle ne prétend pas que le capitalisme aurait commencé à une date exacte. Elle montre des institutions et processus historiques majeurs qui ont contribué à construire le système-monde capitaliste.",
+    selectedEvent: "Événement sélectionné",
+    previous: "Précédent",
+    next: "Suivant",
+    mapTitle: "Carte du monde",
+    mapCaptionDefault: "Lieux liés à l’événement sélectionné.",
+    mapCaptionPlaces: "{places} lieux · {flows} flux",
+    legendTrade: "Commerce",
+    legendFinance: "Finance",
+    legendState: "État",
+    legendSlavery: "Esclavage",
     all: "Tous",
     filterLabels: {
       trade: "commerce",
@@ -85,30 +143,170 @@ const i18n = {
   }
 };
 
-function place(id, nameEn, nameFr, lat, lng, roleEn, roleFr) {
-  return { id, name: { en: nameEn, fr: nameFr }, lat, lng, role: { en: roleEn, fr: roleFr } };
-}
 
-function flow(from, to, category, intensity, labelEn, labelFr) {
-  return { from, to, category, intensity, label: { en: labelEn, fr: labelFr } };
+function mapPlace(id, lat, lng, nameEn, nameFr, roleEn, roleFr) {
+  return { id, lat, lng, name: { en: nameEn, fr: nameFr }, role: { en: roleEn, fr: roleFr } };
 }
+function mapFlow(from, to, category, labelEn, labelFr) {
+  return { from, to, category, label: { en: labelEn, fr: labelFr } };
+}
+const legacyEventMaps = {
+  0: { places: [
+    mapPlace("uruk",31.32,45.64,"Uruk / southern Mesopotamia","Uruk / Mésopotamie du Sud","Early accounting and temple economy.","Première comptabilité et économie de temple."),
+    mapPlace("susa",32.19,48.25,"Susa","Suse","Regional exchange hub.","Pôle d’échange régional.")
+  ], flows:[ mapFlow("uruk","susa","trade","Regional exchange network","Réseau d’échange régional") ] },
+  1: { places:[
+    mapPlace("sardis",38.48,28.04,"Sardis / Lydia","Sardes / Lydie","Early coinage state center.","Centre étatique de la monnaie frappée."),
+    mapPlace("athens",37.98,23.72,"Athens","Athènes","Coin circulation and markets.","Circulation monétaire et marchés.")
+  ], flows:[ mapFlow("sardis","athens","trade","Coined money spreads through trade zones","La monnaie frappée se diffuse dans les zones commerciales") ] },
+  2: { places:[
+    mapPlace("troyes",48.3,4.07,"Troyes / Champagne fairs","Troyes / foires de Champagne","Commercial fair center.","Centre des foires commerciales."),
+    mapPlace("genoa",44.41,8.93,"Genoa","Gênes","Mediterranean merchant city.","Ville marchande méditerranéenne."),
+    mapPlace("bruges",51.21,3.22,"Bruges","Bruges","Northern trading hub.","Carrefour commercial du Nord.")
+  ], flows:[ mapFlow("genoa","troyes","trade","Mediterranean merchants connect inland fairs","Les marchands méditerranéens rejoignent les foires intérieures"), mapFlow("troyes","bruges","trade","Fairs connect to northern markets","Les foires se relient aux marchés du Nord") ] },
+  3: { places:[
+    mapPlace("london",51.51,-0.13,"London","Londres","Labor regulation after the plague.","Régulation du travail après la peste."),
+    mapPlace("florence",43.77,11.25,"Florence","Florence","Urban labor and demographic shock.","Travail urbain et choc démographique."),
+    mapPlace("paris",48.86,2.35,"Paris","Paris","Feudal order under pressure.","Ordre féodal sous pression.")
+  ], flows:[ mapFlow("paris","london","state","Post-plague labor controls spread","Les contrôles du travail post-peste se diffusent"), mapFlow("florence","paris","labor","Wage pressure after population collapse","Pression salariale après l’effondrement démographique") ] },
+  4: { places:[
+    mapPlace("genoa",44.41,8.93,"Genoa","Gênes","Bank of Saint George and public debt.","Banque de Saint-Georges et dette publique."),
+    mapPlace("med",38.0,16.0,"Mediterranean trade zone","Zone commerciale méditerranéenne","Sea trade routes.","Routes maritimes commerciales.")
+  ], flows:[ mapFlow("med","genoa","finance","Trade revenues and debt management concentrate in Genoa","Revenus commerciaux et gestion de la dette se concentrent à Gênes") ] },
+  5: { places:[
+    mapPlace("seville",37.39,-5.99,"Seville / Castile","Séville / Castille","Imperial Atlantic administration.","Administration impériale atlantique."),
+    mapPlace("caribbean",18.2,-66.5,"Caribbean","Caraïbes","First conquest zone in the Americas.","Première grande zone de conquête dans les Amériques."),
+    mapPlace("potosi",-19.58,-65.75,"Potosí","Potosí","Silver extraction and forced labor.","Extraction de l’argent et travail forcé.")
+  ], flows:[ mapFlow("seville","caribbean","state","Conquest crosses the Atlantic","La conquête traverse l’Atlantique"), mapFlow("potosi","seville","state","Silver feeds European accumulation","L’argent alimente l’accumulation européenne") ] },
+  6: { places:[
+    mapPlace("westaf",6,0,"West African coast","Côte ouest-africaine","Slave-trading ports and captive labor extraction.","Ports négriers et extraction de main-d’œuvre captive."),
+    mapPlace("carib",18.2,-66.5,"Caribbean plantations","Plantations des Caraïbes","Sugar and plantation economy.","Économie de plantation sucrière."),
+    mapPlace("liverpool",53.41,-2.99,"Liverpool","Liverpool","Shipping and merchant capital.","Transport maritime et capital marchand."),
+    mapPlace("charleston",32.78,-79.93,"Charleston / U.S. South","Charleston / Sud des États-Unis","Slave plantation economy.","Économie esclavagiste de plantation.")
+  ], flows:[ mapFlow("westaf","carib","slavery","Forced transatlantic movement of enslaved Africans","Déplacement transatlantique forcé des Africains esclavisés"), mapFlow("carib","liverpool","slavery","Plantation commodities return to Europe","Les marchandises de plantation retournent en Europe"), mapFlow("westaf","charleston","slavery","Slave trade feeds plantation expansion","La traite nourrit l’expansion des plantations") ] },
+  7: { places:[
+    mapPlace("amsterdam",52.37,4.9,"Amsterdam","Amsterdam","Stock exchange and VOC headquarters.","Bourse et siège de la VOC."),
+    mapPlace("cape",-34.36,18.47,"Cape route","Route du Cap","Strategic maritime route.","Route maritime stratégique."),
+    mapPlace("batavia",-6.21,106.85,"Batavia / Jakarta","Batavia / Jakarta","Colonial Asian trading center.","Centre commercial colonial asiatique.")
+  ], flows:[ mapFlow("amsterdam","cape","finance","Joint-stock capital moves through imperial routes","Le capital par actions circule par les routes impériales"), mapFlow("cape","batavia","finance","VOC trade reaches Asia","Le commerce de la VOC atteint l’Asie") ] },
+  8: { places:[
+    mapPlace("london",51.51,-0.13,"London","Londres","Bank of England and public debt.","Banque d’Angleterre et dette publique."),
+    mapPlace("atlantic",25,-40,"Atlantic empire","Empire atlantique","War, trade, and imperial finance.","Guerre, commerce et finance impériale.")
+  ], flows:[ mapFlow("london","atlantic","finance","Public debt supports imperial expansion","La dette publique soutient l’expansion impériale") ] },
+  9: { places:[
+    mapPlace("charleston",32.78,-79.93,"U.S. South cotton zone","Zone cotonnière du Sud des États-Unis","Slave-produced cotton inputs.","Intrants cotonniers produits par l’esclavage."),
+    mapPlace("manchester",53.48,-2.24,"Manchester","Manchester","Textile factories and industrial labor.","Usines textiles et travail industriel."),
+    mapPlace("lancashire",53.76,-2.7,"Lancashire","Lancashire","Coal and mills.","Charbon et filatures.")
+  ], flows:[ mapFlow("charleston","manchester","slavery","Slave-produced cotton feeds mills","Le coton produit par l’esclavage alimente les filatures"), mapFlow("lancashire","manchester","trade","Coal and machinery power factory production","Charbon et machines alimentent la production") ] },
+  10: { places:[
+    mapPlace("berlin",52.52,13.4,"Berlin","Berlin","Imperial partition politics.","Politique impériale de partage."),
+    mapPlace("kinshasa",-4.32,15.31,"Congo Basin","Bassin du Congo","Colonial extraction and forced labor.","Extraction coloniale et travail forcé."),
+    mapPlace("london",51.51,-0.13,"London","Londres","Financial and imperial center.","Centre financier et impérial."),
+    mapPlace("bombay",19.08,72.88,"Bombay / Mumbai","Bombay / Mumbai","Colonial trade and finance.","Commerce colonial et finance.")
+  ], flows:[ mapFlow("berlin","kinshasa","state","Imperial partition opens extraction zones","Le partage impérial ouvre des zones d’extraction"), mapFlow("kinshasa","london","state","Colonial profits move to Europe","Les profits coloniaux vont vers l’Europe"), mapFlow("bombay","london","trade","Colonial trade links India to imperial finance","Le commerce colonial relie l’Inde à la finance impériale") ] },
+  11: { places:[
+    mapPlace("washington",38.9,-77.04,"Washington, D.C.","Washington","Federal Reserve Act and state authority.","Federal Reserve Act et autorité de l’État."),
+    mapPlace("newyork",40.71,-74.01,"New York","New York","Financial markets and banking power.","Marchés financiers et pouvoir bancaire.")
+  ], flows:[ mapFlow("washington","newyork","finance","Central banking links state authority and finance","La banque centrale relie l’État et la finance") ] },
+  12: { places:[
+    mapPlace("bw",44.26,-71.44,"Bretton Woods","Bretton Woods","Conference of the postwar monetary order.","Conférence de l’ordre monétaire d’après-guerre."),
+    mapPlace("washington",38.9,-77.04,"Washington, D.C.","Washington","IMF and World Bank headquarters.","Sièges du FMI et de la Banque mondiale."),
+    mapPlace("globalsouth",5,20,"Debtor countries / Global South","Pays débiteurs / Sud global","Development finance and debt relations.","Finance du développement et relations de dette.")
+  ], flows:[ mapFlow("bw","washington","state","Postwar institutions center on Washington","Les institutions d’après-guerre se centrent à Washington"), mapFlow("washington","globalsouth","finance","Development lending spreads globally","Les prêts au développement se diffusent mondialement") ] },
+  13: { places:[
+    mapPlace("washington",38.9,-77.04,"Washington, D.C.","Washington","Dollar policy and global institutions.","Politique du dollar et institutions mondiales."),
+    mapPlace("london",51.51,-0.13,"London","Londres","Financial deregulation.","Dérégulation financière."),
+    mapPlace("latam",-15,-60,"Latin American debt crisis","Crise de la dette latino-américaine","Debt and structural adjustment.","Dette et ajustement structurel.")
+  ], flows:[ mapFlow("washington","london","finance","Financial deregulation links major markets","La dérégulation relie les grands marchés"), mapFlow("washington","latam","finance","Debt discipline spreads through the global South","La discipline de la dette se diffuse dans le Sud global") ] },
+  14: { places:[
+    mapPlace("geneva",46.2,6.14,"Geneva / WTO","Genève / OMC","Global trade rules.","Règles du commerce mondial."),
+    mapPlace("shenzhen",22.54,114.06,"Shenzhen","Shenzhen","Export manufacturing and supply chains.","Production d’exportation et chaînes d’approvisionnement."),
+    mapPlace("mexborder",31.74,-106.49,"Mexico border factories","Usines frontalières mexicaines","Maquiladora production.","Production maquiladora.")
+  ], flows:[ mapFlow("geneva","shenzhen","trade","Trade rules support manufacturing chains","Les règles commerciales soutiennent les chaînes manufacturières"), mapFlow("geneva","mexborder","trade","Trade agreements reorganize labor zones","Les accords réorganisent les zones de travail") ] },
+  15: { places:[
+    mapPlace("newyork",40.71,-74.01,"New York / Wall Street","New York / Wall Street","Financial crisis epicenter.","Épicentre de la crise financière."),
+    mapPlace("london",51.51,-0.13,"London","Londres","Global banking transmission.","Transmission bancaire mondiale."),
+    mapPlace("reyk",64.15,-21.94,"Iceland","Islande","Banking collapse shock.","Choc d’effondrement bancaire.")
+  ], flows:[ mapFlow("newyork","london","finance","Mortgage crisis spreads through banking","La crise hypothécaire se diffuse par les banques"), mapFlow("london","reyk","finance","Interconnected banks expose systemic fragility","Les banques interconnectées exposent la fragilité systémique") ] },
+  16: { places:[
+    mapPlace("silicon",37.39,-122.08,"Silicon Valley","Silicon Valley","Platforms, venture capital, and data extraction.","Plateformes, capital-risque et extraction de données."),
+    mapPlace("shenzhen",22.54,114.06,"Shenzhen","Shenzhen","Hardware manufacturing and logistics.","Production matérielle et logistique."),
+    mapPlace("bangalore",12.97,77.59,"Bangalore","Bangalore","Software labor and outsourced services.","Travail logiciel et services externalisés."),
+    mapPlace("users",20,0,"Global users","Utilisateurs mondiaux","Attention, data, and platform dependence.","Attention, données et dépendance aux plateformes.")
+  ], flows:[ mapFlow("users","silicon","finance","Data and attention become monetized assets","Données et attention deviennent des actifs monétisés"), mapFlow("silicon","shenzhen","trade","Platforms rely on hardware supply chains","Les plateformes dépendent des chaînes matérielles"), mapFlow("silicon","bangalore","finance","Digital labor supports platform growth","Le travail numérique soutient la croissance des plateformes") ] }
+};
+
+
+// Explicit map-to-event relationship (do not infer the map from filtered card position).
+// Cross-checked against each of the 24 timeline events.
+const eventMaps = {
+  0: legacyEventMaps[0],
+  1: legacyEventMaps[1],
+  2: legacyEventMaps[2],
+  3: legacyEventMaps[3],
+  4: legacyEventMaps[4],
+  5: {places:[
+    mapPlace("palos",37.23,-6.89,"Palos de la Frontera","Palos de la Frontera","Departure port of Columbus's 1492 voyage.","Port de départ du voyage de Colomb en 1492."),
+    mapPlace("guanahani",24.05,-74.52,"Bahamas / Guanahani (approx.)","Bahamas / Guanahani (approx.)","First landfall in the Caribbean, location debated.","Premier débarquement dans les Caraïbes, lieu débattu."),
+    mapPlace("hispaniola",19.0,-70.6,"Hispaniola","Hispaniola","Early Spanish colonization and violent dispossession.","Première colonisation espagnole et dépossession violente.")
+  ],flows:[mapFlow("palos","guanahani","state","1492 crossing and arrival","Traversée et arrivée de 1492"),mapFlow("guanahani","hispaniola","state","Expansion of colonial conquest","Expansion de la conquête coloniale")]},
+  6: {places:[
+    mapPlace("venice",45.44,12.33,"Venice","Venise","Publication of Pacioli's Summa in 1494.","Publication de la Summa de Pacioli en 1494."),
+    mapPlace("florence",43.77,11.25,"Florence","Florence","Italian merchant-accounting milieu.","Milieu marchand et comptable italien.")
+  ],flows:[]},
+  7: legacyEventMaps[6],
+  8: {places:[
+    mapPlace("amsterdam",52.37,4.90,"Amsterdam","Amsterdam","VOC charter and early share trading in 1602.","Création de la VOC et premiers échanges d'actions en 1602."),
+    mapPlace("bantam",-6.01,106.16,"Banten (Java)","Banten (Java)","Trading port reached by Dutch merchants before the VOC charter.","Port fréquenté par les marchands néerlandais avant la création de la VOC."),
+    mapPlace("moluccas",0.69,127.43,"Maluku spice islands","Moluques, îles aux épices","Asian spice trade sought by the VOC.","Commerce asiatique des épices convoité par la VOC.")
+  ],flows:[mapFlow("amsterdam","bantam","trade","Early Dutch commercial voyages to Java","Premiers voyages commerciaux néerlandais vers Java"),mapFlow("bantam","moluccas","trade","Spice-trade network (schematic)","Réseau des épices (schématique)")]},
+  9: {places:[
+    mapPlace("amsterdam",52.37,4.90,"Amsterdam","Amsterdam","Bank of Amsterdam founded in 1609.","Banque d'Amsterdam fondée en 1609.")
+  ],flows:[]},
+  10: legacyEventMaps[8],
+  11: legacyEventMaps[9],
+  12: {places:[
+    mapPlace("georgia",32.46,-83.69,"Georgia / U.S. South","Géorgie / Sud des États-Unis","Cotton gin patented in 1794 after development in 1793.","Égreneuse à coton développée en 1793 et brevetée en 1794."),
+    mapPlace("liverpool",53.41,-2.99,"Liverpool","Liverpool","Cotton import and textile trade.","Importation de coton et commerce textile."),
+    mapPlace("manchester",53.48,-2.24,"Manchester","Manchester","British textile mills consuming cotton.","Filatures britanniques utilisant le coton.")
+  ],flows:[mapFlow("georgia","liverpool","slavery","Slave-grown cotton enters Atlantic textile trade","Le coton cultivé par des esclaves entre dans le commerce textile atlantique"),mapFlow("liverpool","manchester","trade","Imported cotton supplies mills","Le coton importé alimente les filatures")]},
+  13: {places:[
+    mapPlace("liverpool",53.41,-2.99,"Liverpool","Liverpool","Early passenger railway and commercial port.","Premiers chemins de fer de voyageurs et port commercial."),
+    mapPlace("manchester",53.48,-2.24,"Manchester","Manchester","Industrial destination of the Liverpool and Manchester Railway.","Destination industrielle du chemin de fer Liverpool-Manchester."),
+    mapPlace("calcutta",22.57,88.36,"Calcutta / Kolkata","Calcutta / Kolkata","Railway and telegraph expansion under British colonial rule.","Expansion du rail et du télégraphe sous domination coloniale britannique.")
+  ],flows:[mapFlow("liverpool","manchester","industry","Liverpool–Manchester railway, opened 1830","Chemin de fer Liverpool-Manchester ouvert en 1830"),mapFlow("liverpool","calcutta","state","British capital and imperial infrastructure (schematic)","Capitaux britanniques et infrastructures impériales (schématique)")]},
+  14: {places:[
+    mapPlace("london",51.51,-0.13,"London","Londres","British Joint Stock Companies Act 1856 and limited-liability framework.","Loi britannique sur les sociétés de 1856 et cadre de responsabilité limitée.")
+  ],flows:[]},
+  15: legacyEventMaps[10],
+  16: legacyEventMaps[11],
+  17: {places:[
+    mapPlace("newyork",40.71,-74.01,"New York / Wall Street","New York / Wall Street","Stock market crash in October 1929.","Krach boursier d'octobre 1929."),
+    mapPlace("washington",38.9,-77.04,"Washington, D.C.","Washington","Federal responses and New Deal programs.","Réponses fédérales et programmes du New Deal."),
+    mapPlace("berlin",52.52,13.40,"Berlin","Berlin","Severe economic and political effects in Europe.","Graves conséquences économiques et politiques en Europe.")
+  ],flows:[mapFlow("newyork","berlin","finance","Financial contraction spreads across the Atlantic","La contraction financière se diffuse à travers l'Atlantique"),mapFlow("newyork","washington","state","Market crash prompts federal responses","Le krach provoque des réponses fédérales")]},
+  18: legacyEventMaps[12],
+  19: legacyEventMaps[13],
+  20: legacyEventMaps[14],
+  21: legacyEventMaps[15],
+  22: legacyEventMaps[16],
+  23: {places:[
+    mapPlace("silicon",37.39,-122.08,"Silicon Valley","Silicon Valley","Large AI firms and investment.","Grandes entreprises d'IA et investissements."),
+    mapPlace("ashburn",39.04,-77.49,"Northern Virginia data centers","Centres de données du nord de la Virginie","Data-center and cloud infrastructure.","Infrastructure des centres de données et du cloud."),
+    mapPlace("drc",-10.72,25.46,"DR Congo / copper-cobalt belt","RD Congo / ceinture cuivre-cobalt","Critical minerals and mining economies.","Minerais critiques et économies minières."),
+    mapPlace("brussels",50.85,4.35,"Brussels / EU policy","Bruxelles / politiques UE","Climate and digital regulatory policy.","Politiques de régulation climatique et numérique.")
+  ],flows:[mapFlow("drc","brussels","trade","Critical mineral value chains (schematic)","Chaînes de valeur des minerais critiques (schématique)"),mapFlow("silicon","ashburn","finance","AI capital and cloud infrastructure (schematic)","Capital de l'IA et infrastructure cloud (schématique)")]}
+};
 
 const events = [
   {
     year: "c. 3000 BCE",
     category: "trade",
     tags: ["trade", "credit", "accounting"],
-    places: [
-      place("uruk", "Uruk / southern Mesopotamia", "Uruk / Mésopotamie du Sud", 31.32, 45.64, "Early urban accounting, grain storage, and temple economies.", "Comptabilité urbaine, stockage des céréales et économies de temple."),
-      place("susa", "Susa", "Suse", 32.19, 48.25, "Regional exchange and administration.", "Échange régional et administration.")
-    ],
-    flows: [
-      flow("uruk", "susa", "trade", 1, "Regional exchange and accounting networks", "Réseaux régionaux d’échange et de comptabilité")
-    ],
     en: {
       title: "Early trade, accounting, and credit",
       summary: "Ancient Mesopotamian temples, merchants, ledgers, grain stores, and debt records show early systems of exchange, credit, and accounting.",
-      detail: "Capitalism did not exist yet, but some tools later used by capitalism were already present: written accounts, debts, contracts, interest, storage, and organized trade.",
+      detail: "Capitalism did not exist yet, but some tools later used by capitalism were already present: written accounts, debts, contracts, interest, storage, and organized long-distance trade.",
       contexts: {
         built: "It helped create the basic infrastructure of exchange: records, contracts, credit, measurement, and trust over distance.",
         benefited: "Rulers, temples, merchants, and large landholders could coordinate goods and labor at larger scales.",
@@ -120,13 +318,42 @@ const events = [
     fr: {
       title: "Premiers échanges, comptabilité et crédit",
       summary: "Les temples, marchands, registres, greniers et dettes de la Mésopotamie ancienne montrent des formes précoces d’échange, de crédit et de comptabilité.",
-      detail: "Le capitalisme n’existe pas encore, mais certains outils qu’il utilisera plus tard sont déjà présents : comptes écrits, dettes, contrats, intérêt, stockage et commerce organisé.",
+      detail: "Le capitalisme n’existe pas encore, mais certains outils qu’il utilisera plus tard sont déjà présents : comptes écrits, dettes, contrats, intérêt, stockage et commerce à longue distance.",
       contexts: {
         built: "Cela crée une infrastructure de base pour l’échange : registres, contrats, crédit, mesure et confiance à distance.",
         benefited: "Les souverains, temples, marchands et grands propriétaires peuvent coordonner biens et travail à plus grande échelle.",
         paid: "Les paysans, débiteurs, personnes esclavisées et travailleurs dépendants portent souvent le poids de la dette et de l’extraction.",
-        link: "Le capitalisme moderne intensifie ces outils en reliant crédit et comptabilité à l’investissement privé, au profit et à l’expansion des marchés.",
+        link: "Le capitalisme moderne intensifiera ces outils en reliant crédit et comptabilité à l’investissement privé, au profit et à l’expansion des marchés.",
         critical: "Les marchés sont anciens, mais le marché seul n’est pas le capitalisme. Le capitalisme est un système plus tardif organisé autour de l’accumulation, du salariat, de la propriété privée et du profit concurrentiel."
+      }
+    }
+  },
+  {
+    year: "c. 600 BCE",
+    category: "trade",
+    tags: ["money", "markets", "state"],
+    en: {
+      title: "Coined money spreads",
+      summary: "Coins help standardize exchange, taxation, military payment, and market circulation across states and trade zones.",
+      detail: "Coinage made value portable and visible. It helped states pay soldiers, collect taxes, and connect local markets to wider circuits of exchange.",
+      contexts: {
+        built: "Money became a more standardized medium of exchange, store of value, and unit of account.",
+        benefited: "States, armies, merchants, and tax collectors gained a more flexible instrument of control and trade.",
+        paid: "Taxpayers and conquered populations were pulled more deeply into monetary obligations.",
+        link: "Capitalism requires money to circulate as capital: money advanced to generate more money.",
+        critical: "Money can support trade, but capitalism begins when money, labor, land, and production are reorganized around accumulation."
+      }
+    },
+    fr: {
+      title: "Diffusion de la monnaie frappée",
+      summary: "Les pièces standardisent l’échange, l’impôt, la paie militaire et la circulation marchande entre États et zones commerciales.",
+      detail: "La monnaie frappée rend la valeur portable et visible. Elle aide les États à payer les soldats, lever l’impôt et relier les marchés locaux à des circuits d’échange plus larges.",
+      contexts: {
+        built: "La monnaie devient un moyen d’échange, une réserve de valeur et une unité de compte plus standardisés.",
+        benefited: "Les États, armées, marchands et collecteurs d’impôts gagnent un instrument plus flexible de contrôle et de commerce.",
+        paid: "Les contribuables et populations conquises sont davantage intégrés aux obligations monétaires.",
+        link: "Le capitalisme exige que l’argent circule comme capital : de l’argent avancé pour produire davantage d’argent.",
+        critical: "La monnaie peut soutenir le commerce, mais le capitalisme commence quand monnaie, travail, terre et production sont réorganisés autour de l’accumulation."
       }
     }
   },
@@ -134,15 +361,6 @@ const events = [
     year: "11th–13th c.",
     category: "trade",
     tags: ["fairs", "merchants", "bills of exchange"],
-    places: [
-      place("troyes", "Troyes / Champagne fairs", "Troyes / foires de Champagne", 48.30, 4.07, "Major medieval commercial fair.", "Grande foire commerciale médiévale."),
-      place("genoa", "Genoa", "Gênes", 44.41, 8.93, "Maritime merchant city.", "Cité marchande maritime."),
-      place("bruges", "Bruges", "Bruges", 51.21, 3.22, "Northern European trading hub.", "Centre commercial du nord de l’Europe.")
-    ],
-    flows: [
-      flow("genoa", "troyes", "trade", 2, "Mediterranean merchants connect to inland fairs", "Les marchands méditerranéens rejoignent les foires intérieures"),
-      flow("troyes", "bruges", "trade", 2, "Commercial routes link fairs to northern markets", "Les routes commerciales relient les foires aux marchés du Nord")
-    ],
     en: {
       title: "Medieval trade fairs and merchant networks",
       summary: "Commercial fairs, bills of exchange, merchant law, and long-distance networks expand European trade.",
@@ -169,16 +387,38 @@ const events = [
     }
   },
   {
+    year: "1347–1351",
+    category: "labor",
+    tags: ["labor", "wages", "feudalism"],
+    en: {
+      title: "Black Death weakens feudal labor relations",
+      summary: "Population collapse after the plague increases labor scarcity in parts of Europe and helps undermine older feudal obligations.",
+      detail: "The Black Death did not create capitalism, but it changed the balance between landlords and workers in many regions. Labor scarcity contributed to wage struggles and pressure against serfdom.",
+      contexts: {
+        built: "It helped destabilize feudal labor systems and made wage labor more important in some areas.",
+        benefited: "Some workers gained bargaining power, while landlords and states tried to restrict wages and mobility.",
+        paid: "The poor suffered massively from disease, repression, and later attempts to restore labor discipline.",
+        link: "Capitalism later depends on workers being legally free but economically compelled to sell labor.",
+        critical: "The transition from feudalism to capitalism was uneven, conflictual, and different across regions."
+      }
+    },
+    fr: {
+      title: "La peste noire affaiblit les rapports féodaux",
+      summary: "L’effondrement démographique augmente la rareté de la main-d’œuvre dans certaines régions d’Europe et fragilise les obligations féodales.",
+      detail: "La peste noire ne crée pas le capitalisme, mais elle modifie le rapport de force entre propriétaires et travailleurs. La rareté du travail favorise les luttes salariales et la contestation du servage.",
+      contexts: {
+        built: "Elle déstabilise certains systèmes féodaux de travail et rend le salariat plus important dans plusieurs régions.",
+        benefited: "Certains travailleurs gagnent du pouvoir de négociation, tandis que les seigneurs et États cherchent à limiter salaires et mobilité.",
+        paid: "Les pauvres subissent la maladie, la répression et les tentatives de rétablir la discipline du travail.",
+        link: "Le capitalisme dépendra plus tard de travailleurs juridiquement libres mais économiquement contraints de vendre leur force de travail.",
+        critical: "La transition du féodalisme au capitalisme est inégale, conflictuelle et différente selon les régions."
+      }
+    }
+  },
+  {
     year: "1407",
     category: "finance",
     tags: ["banking", "public debt", "city-states"],
-    places: [
-      place("genoa", "Genoa", "Gênes", 44.41, 8.93, "Bank of Saint George and public debt.", "Banque de Saint-Georges et dette publique."),
-      place("mediterranean", "Mediterranean trade zone", "Zone commerciale méditerranéenne", 38.0, 16.0, "Maritime exchange zone.", "Zone d’échange maritime.")
-    ],
-    flows: [
-      flow("mediterranean", "genoa", "finance", 2, "Trade revenues and debt management concentrate in Genoa", "Revenus commerciaux et gestion de la dette se concentrent à Gênes")
-    ],
     en: {
       title: "Bank of Saint George",
       summary: "Genoa's Bank of Saint George becomes one of Europe's early powerful public banks, linking state debt, commerce, and finance.",
@@ -208,15 +448,6 @@ const events = [
     year: "1492",
     category: "state",
     tags: ["colonialism", "land", "extraction"],
-    places: [
-      place("seville", "Seville / Castile", "Séville / Castille", 37.39, -5.99, "Imperial administration and Atlantic trade.", "Administration impériale et commerce atlantique."),
-      place("caribbean", "Caribbean", "Caraïbes", 18.2, -66.5, "First major conquest zone in the Americas.", "Première grande zone de conquête dans les Amériques."),
-      place("potosi", "Potosí", "Potosí", -19.58, -65.75, "Silver extraction and forced labor.", "Extraction de l’argent et travail forcé.")
-    ],
-    flows: [
-      flow("seville", "caribbean", "state", 4, "Conquest and colonization cross the Atlantic", "Conquête et colonisation traversent l’Atlantique"),
-      flow("potosi", "seville", "state", 4, "Silver extraction feeds European accumulation", "L’extraction de l’argent nourrit l’accumulation européenne")
-    ],
     en: {
       title: "Conquest of the Americas begins",
       summary: "European conquest opens a violent era of colonization, land seizure, resource extraction, forced labor, and global trade reorganization.",
@@ -243,20 +474,38 @@ const events = [
     }
   },
   {
+    year: "1494",
+    category: "finance",
+    tags: ["accounting", "profit", "books"],
+    en: {
+      title: "Double-entry bookkeeping codified",
+      summary: "Luca Pacioli publishes a description of double-entry bookkeeping, helping standardize profit calculation and commercial accounting.",
+      detail: "Double-entry accounting made it easier to track assets, liabilities, costs, debts, and profits. It became a core technology of capitalist rationality.",
+      contexts: {
+        built: "It created a clearer way to measure profit, loss, capital, debt, and business performance.",
+        benefited: "Merchants, bankers, and firms gained stronger control over complex commercial operations.",
+        paid: "Workers and debtors became more legible inside systems of calculation and discipline.",
+        link: "Capitalism needs measurement: profit must be counted before it can be maximized.",
+        critical: "Accounting looks technical, but it shapes what counts as value and what disappears as external cost."
+      }
+    },
+    fr: {
+      title: "Codification de la comptabilité en partie double",
+      summary: "Luca Pacioli publie une description de la comptabilité en partie double, standardisant le calcul du profit et la comptabilité commerciale.",
+      detail: "La comptabilité en partie double facilite le suivi des actifs, passifs, coûts, dettes et profits. Elle devient une technologie centrale de la rationalité capitaliste.",
+      contexts: {
+        built: "Elle crée une méthode plus claire pour mesurer profit, perte, capital, dette et performance commerciale.",
+        benefited: "Les marchands, banquiers et entreprises gagnent un meilleur contrôle sur les opérations complexes.",
+        paid: "Les travailleurs et débiteurs deviennent plus lisibles dans des systèmes de calcul et de discipline.",
+        link: "Le capitalisme a besoin de mesure : le profit doit être compté avant d’être maximisé.",
+        critical: "La comptabilité semble technique, mais elle décide ce qui compte comme valeur et ce qui disparaît comme coût externe."
+      }
+    }
+  },
+  {
     year: "1500s–1800s",
     category: "slavery",
     tags: ["slavery", "plantations", "racial capitalism"],
-    places: [
-      place("west-africa", "West African coast", "Côte ouest-africaine", 6.0, 0.0, "Captive labor extraction and slave-trading ports.", "Extraction de main-d’œuvre captive et ports négriers."),
-      place("caribbean", "Caribbean plantations", "Plantations des Caraïbes", 18.2, -66.5, "Sugar, coffee, and plantation economies.", "Sucre, café et économies de plantation."),
-      place("liverpool", "Liverpool", "Liverpool", 53.41, -2.99, "Shipping, insurance, merchant capital.", "Transport maritime, assurance et capital marchand."),
-      place("charleston", "Charleston / U.S. South", "Charleston / Sud des États-Unis", 32.78, -79.93, "Slave plantation economy.", "Économie esclavagiste de plantation.")
-    ],
-    flows: [
-      flow("west-africa", "caribbean", "slavery", 4, "Forced transatlantic movement of enslaved Africans", "Déplacement transatlantique forcé des Africains esclavisés"),
-      flow("caribbean", "liverpool", "slavery", 4, "Plantation commodities and profits return to Europe", "Marchandises et profits de plantation retournent en Europe"),
-      flow("west-africa", "charleston", "slavery", 4, "Slave trade feeds plantation expansion", "La traite nourrit l’expansion des plantations")
-    ],
     en: {
       title: "Atlantic slavery and plantation capitalism",
       summary: "The transatlantic slave trade and plantation economies turn forced African labor into a foundation of Atlantic wealth.",
@@ -286,15 +535,6 @@ const events = [
     year: "1602",
     category: "finance",
     tags: ["VOC", "shares", "corporation"],
-    places: [
-      place("amsterdam", "Amsterdam", "Amsterdam", 52.37, 4.90, "Stock exchange, investors, and VOC headquarters.", "Bourse, investisseurs et siège de la VOC."),
-      place("cape-town", "Cape route", "Route du Cap", -34.36, 18.47, "Strategic maritime route.", "Route maritime stratégique."),
-      place("batavia", "Batavia / Jakarta", "Batavia / Jakarta", -6.21, 106.85, "Colonial trading center in Asia.", "Centre commercial colonial en Asie.")
-    ],
-    flows: [
-      flow("amsterdam", "cape-town", "finance", 3, "Joint-stock capital moves through imperial sea routes", "Le capital par actions circule par les routes maritimes impériales"),
-      flow("cape-town", "batavia", "finance", 3, "VOC trade and colonial power reach Asia", "Le commerce et le pouvoir colonial de la VOC atteignent l’Asie")
-    ],
     en: {
       title: "Dutch East India Company and tradable shares",
       summary: "The VOC is chartered as a joint-stock company, allowing investors to buy shares in long-distance imperial trade.",
@@ -321,16 +561,38 @@ const events = [
     }
   },
   {
+    year: "1609",
+    category: "finance",
+    tags: ["banking", "Amsterdam", "exchange"],
+    en: {
+      title: "Bank of Amsterdam",
+      summary: "Amsterdam's public exchange bank stabilizes payments and helps make the city a major financial center.",
+      detail: "The Bank of Amsterdam supported trade by providing reliable deposits and settlement. It strengthened Amsterdam's role in early modern finance.",
+      contexts: {
+        built: "It helped stabilize commercial payments and trust in money for long-distance trade.",
+        benefited: "Merchants, traders, and the Dutch commercial empire gained a stronger payment infrastructure.",
+        paid: "The wealth moving through Amsterdam was tied to colonial extraction and unequal trade.",
+        link: "Capitalism needs stable financial plumbing: deposits, clearing, settlement, and trustworthy money.",
+        critical: "Financial stability for merchants often rested on instability and violence elsewhere."
+      }
+    },
+    fr: {
+      title: "Banque d’Amsterdam",
+      summary: "La banque publique de change d’Amsterdam stabilise les paiements et contribue à faire de la ville un centre financier majeur.",
+      detail: "La Banque d’Amsterdam soutient le commerce par des dépôts fiables et des règlements sécurisés. Elle renforce le rôle d’Amsterdam dans la finance moderne naissante.",
+      contexts: {
+        built: "Elle stabilise les paiements commerciaux et la confiance monétaire dans le commerce à longue distance.",
+        benefited: "Les marchands, négociants et l’empire commercial néerlandais gagnent une infrastructure de paiement plus forte.",
+        paid: "Les richesses circulant par Amsterdam sont liées à l’extraction coloniale et au commerce inégal.",
+        link: "Le capitalisme a besoin d’une plomberie financière stable : dépôts, compensation, règlement et monnaie crédible.",
+        critical: "La stabilité financière des marchands reposait souvent sur l’instabilité et la violence ailleurs."
+      }
+    }
+  },
+  {
     year: "1694",
     category: "finance",
     tags: ["central banking", "public debt", "war"],
-    places: [
-      place("london", "London", "Londres", 51.51, -0.13, "Bank of England and public debt.", "Banque d’Angleterre et dette publique."),
-      place("atlantic", "Atlantic empire", "Empire atlantique", 25, -40, "War, trade, and imperial finance.", "Guerre, commerce et finance impériale.")
-    ],
-    flows: [
-      flow("london", "atlantic", "finance", 3, "Public debt and war finance support imperial expansion", "Dette publique et financement de guerre soutiennent l’expansion impériale")
-    ],
     en: {
       title: "Bank of England founded",
       summary: "The Bank of England is founded as a private bank to act as banker to the government and help finance war.",
@@ -360,15 +622,6 @@ const events = [
     year: "1760s–1840s",
     category: "industry",
     tags: ["factories", "machines", "coal"],
-    places: [
-      place("manchester", "Manchester", "Manchester", 53.48, -2.24, "Textile factories and industrial labor.", "Usines textiles et travail industriel."),
-      place("lancashire", "Lancashire coal and mills", "Charbon et filatures du Lancashire", 53.76, -2.70, "Coal, mills, and mechanized production.", "Charbon, filatures et production mécanisée."),
-      place("charleston", "U.S. South cotton zone", "Zone cotonnière du Sud des États-Unis", 32.78, -79.93, "Slave-produced cotton inputs.", "Intrants cotonniers produits par l’esclavage.")
-    ],
-    flows: [
-      flow("charleston", "manchester", "slavery", 4, "Slave-produced cotton feeds British textile mills", "Le coton produit par l’esclavage alimente les filatures britanniques"),
-      flow("lancashire", "manchester", "industry", 3, "Coal and machinery power factory production", "Charbon et machines alimentent la production industrielle")
-    ],
     en: {
       title: "Industrial Revolution",
       summary: "Factories, steam power, coal, textile machinery, and urban labor transform production in Britain and then beyond.",
@@ -395,18 +648,38 @@ const events = [
     }
   },
   {
+    year: "1793",
+    category: "slavery",
+    tags: ["cotton", "slavery", "industry"],
+    en: {
+      title: "Cotton gin and slave cotton expansion",
+      summary: "The cotton gin accelerates cotton processing and strengthens the plantation economy in the U.S. South.",
+      detail: "Cotton became a key raw material for industrial textile production. Enslaved labor in the American South was deeply connected to factories, banks, shipping, and global trade.",
+      contexts: {
+        built: "It expanded cotton plantation capitalism and connected slave labor to industrial textile growth.",
+        benefited: "Planters, textile manufacturers, banks, insurers, shippers, and exporters profited.",
+        paid: "Enslaved people endured intensified exploitation, forced migration, family separation, and violence.",
+        link: "Industrial capitalism and slavery were not separate worlds; cotton linked them directly.",
+        critical: "The factory and the plantation were parts of the same global system."
+      }
+    },
+    fr: {
+      title: "Égreneuse de coton et expansion du coton esclavagiste",
+      summary: "L’égreneuse accélère le traitement du coton et renforce l’économie de plantation dans le Sud des États-Unis.",
+      detail: "Le coton devient une matière première clé pour l’industrie textile. Le travail esclavisé dans le Sud américain est profondément relié aux usines, banques, transports maritimes et marchés mondiaux.",
+      contexts: {
+        built: "Elle étend le capitalisme cotonnier de plantation et relie le travail esclavisé à la croissance textile industrielle.",
+        benefited: "Planteurs, industriels du textile, banques, assureurs, transporteurs et exportateurs en profitent.",
+        paid: "Les personnes esclavisées subissent exploitation intensifiée, migrations forcées, séparation familiale et violence.",
+        link: "Capitalisme industriel et esclavage ne sont pas des mondes séparés ; le coton les relie directement.",
+        critical: "L’usine et la plantation font partie du même système mondial."
+      }
+    }
+  },
+  {
     year: "1830s–1870s",
     category: "industry",
     tags: ["railways", "telegraph", "infrastructure"],
-    places: [
-      place("london", "London finance", "Finance londonienne", 51.51, -0.13, "Railway finance and capital markets.", "Finance ferroviaire et marchés de capitaux."),
-      place("india-rail", "Indian railways", "Chemins de fer indiens", 22.57, 88.36, "Colonial infrastructure and resource circulation.", "Infrastructure coloniale et circulation des ressources."),
-      place("us-rail", "U.S. transcontinental rail", "Chemin de fer transcontinental américain", 41.88, -87.63, "Continental market integration.", "Intégration du marché continental.")
-    ],
-    flows: [
-      flow("london", "india-rail", "industry", 3, "Imperial finance builds colonial infrastructure", "La finance impériale construit l’infrastructure coloniale"),
-      flow("london", "us-rail", "industry", 2, "Capital markets fund railway expansion", "Les marchés de capitaux financent l’expansion ferroviaire")
-    ],
     en: {
       title: "Railways, telegraphs, and infrastructure capitalism",
       summary: "Railways and telegraphs compress time and space, speed up commodity flows, and reorganize territories around markets.",
@@ -433,20 +706,38 @@ const events = [
     }
   },
   {
+    year: "1850s–1860s",
+    category: "finance",
+    tags: ["corporation", "limited liability", "investment"],
+    en: {
+      title: "Limited liability corporation expands",
+      summary: "Company law makes it easier for investors to risk only what they invest, helping corporations grow.",
+      detail: "Limited liability encouraged more people to invest because their personal losses were capped. This helped scale corporate capitalism.",
+      contexts: {
+        built: "It made large-scale investment easier and helped corporations become dominant economic actors.",
+        benefited: "Shareholders and corporate managers gained protection and scale.",
+        paid: "Workers, consumers, communities, and ecosystems could bear harms not fully paid by owners.",
+        link: "The corporation separates ownership, management, risk, and responsibility.",
+        critical: "Limited liability socializes some risks while privatizing many gains."
+      }
+    },
+    fr: {
+      title: "Expansion de la société à responsabilité limitée",
+      summary: "Le droit des sociétés permet aux investisseurs de ne risquer que leur apport, facilitant la croissance des corporations.",
+      detail: "La responsabilité limitée encourage davantage de personnes à investir car les pertes personnelles sont plafonnées. Elle permet au capitalisme corporatif de changer d’échelle.",
+      contexts: {
+        built: "Elle facilite l’investissement à grande échelle et aide les corporations à devenir des acteurs économiques dominants.",
+        benefited: "Les actionnaires et dirigeants d’entreprise gagnent protection et échelle.",
+        paid: "Travailleurs, consommateurs, communautés et écosystèmes peuvent porter des dommages non entièrement assumés par les propriétaires.",
+        link: "La corporation sépare propriété, gestion, risque et responsabilité.",
+        critical: "La responsabilité limitée socialise certains risques tout en privatisant de nombreux gains."
+      }
+    }
+  },
+  {
     year: "1870s–1914",
     category: "state",
     tags: ["imperialism", "gold standard", "colonies"],
-    places: [
-      place("london", "London", "Londres", 51.51, -0.13, "Financial and imperial center.", "Centre financier et impérial."),
-      place("berlin", "Berlin", "Berlin", 52.52, 13.40, "Imperial diplomacy and partition politics.", "Diplomatie impériale et politique de partage."),
-      place("kinshasa", "Congo Basin", "Bassin du Congo", -4.32, 15.31, "Colonial extraction and forced labor.", "Extraction coloniale et travail forcé."),
-      place("bombay", "Bombay / Mumbai", "Bombay / Mumbai", 19.08, 72.88, "Colonial trade, cotton, finance.", "Commerce colonial, coton, finance.")
-    ],
-    flows: [
-      flow("berlin", "kinshasa", "state", 4, "Imperial partition opens extraction zones", "Le partage impérial ouvre des zones d’extraction"),
-      flow("kinshasa", "london", "state", 4, "Rubber, minerals, and colonial profits move to Europe", "Caoutchouc, minerais et profits coloniaux vont vers l’Europe"),
-      flow("bombay", "london", "trade", 3, "Colonial trade connects India to imperial finance", "Le commerce colonial relie l’Inde à la finance impériale")
-    ],
     en: {
       title: "Imperialism, gold standard, and global capitalism",
       summary: "European empires, gold-backed currencies, global trade, and colonial resource extraction intensify world-market integration.",
@@ -476,13 +767,6 @@ const events = [
     year: "1913",
     category: "finance",
     tags: ["central bank", "credit", "US"],
-    places: [
-      place("washington", "Washington, D.C.", "Washington", 38.90, -77.04, "Federal Reserve Act and state authority.", "Federal Reserve Act et autorité de l’État."),
-      place("new-york", "New York", "New York", 40.71, -74.01, "Financial markets and banking power.", "Marchés financiers et pouvoir bancaire.")
-    ],
-    flows: [
-      flow("washington", "new-york", "finance", 3, "Central banking connects state authority and financial markets", "La banque centrale relie autorité d’État et marchés financiers")
-    ],
     en: {
       title: "Federal Reserve created",
       summary: "The United States creates a central banking system to stabilize money, credit, and banking after repeated financial panics.",
@@ -509,18 +793,38 @@ const events = [
     }
   },
   {
+    year: "1929–1930s",
+    category: "state",
+    tags: ["crisis", "depression", "state"],
+    en: {
+      title: "Great Depression and mass unemployment",
+      summary: "Financial collapse reveals capitalism's instability and forces new state interventions, welfare policies, and regulations.",
+      detail: "The Great Depression transformed capitalism by showing that markets could collapse at massive scale. States responded with regulation, public works, welfare, and new economic theories.",
+      contexts: {
+        built: "It built the case for managed capitalism: regulation, welfare, public spending, and labor protections.",
+        benefited: "Some workers gained protections, while capital accepted regulation to save the system.",
+        paid: "The unemployed, poor, migrants, and racialized communities suffered deeply during collapse.",
+        link: "Crises are not accidents outside capitalism; they are recurrent features of capitalist expansion.",
+        critical: "Reform often arrives only after catastrophe threatens the system itself."
+      }
+    },
+    fr: {
+      title: "Grande Dépression et chômage de masse",
+      summary: "L’effondrement financier révèle l’instabilité du capitalisme et impose de nouvelles interventions de l’État, protections sociales et régulations.",
+      detail: "La Grande Dépression transforme le capitalisme en montrant que les marchés peuvent s’effondrer à grande échelle. Les États répondent par régulation, travaux publics, protection sociale et nouvelles théories économiques.",
+      contexts: {
+        built: "Elle légitime un capitalisme administré : régulation, protection sociale, dépenses publiques et droits du travail.",
+        benefited: "Certains travailleurs gagnent des protections, tandis que le capital accepte la régulation pour sauver le système.",
+        paid: "Les chômeurs, pauvres, migrants et communautés racialisées souffrent profondément de l’effondrement.",
+        link: "Les crises ne sont pas des accidents extérieurs au capitalisme ; elles sont récurrentes dans son expansion.",
+        critical: "La réforme arrive souvent seulement quand la catastrophe menace le système lui-même."
+      }
+    }
+  },
+  {
     year: "1944",
     category: "state",
     tags: ["IMF", "World Bank", "dollar"],
-    places: [
-      place("bretton-woods", "Bretton Woods", "Bretton Woods", 44.26, -71.44, "Conference creating the postwar monetary order.", "Conférence créant l’ordre monétaire d’après-guerre."),
-      place("washington", "Washington, D.C.", "Washington", 38.90, -77.04, "IMF and World Bank headquarters.", "Sièges du FMI et de la Banque mondiale."),
-      place("global-south", "Debtor countries / Global South", "Pays débiteurs / Sud global", 5, 20, "Development finance and debt relations.", "Finance du développement et relations de dette.")
-    ],
-    flows: [
-      flow("bretton-woods", "washington", "state", 3, "Postwar institutions are centered in Washington", "Les institutions d’après-guerre se centrent à Washington"),
-      flow("washington", "global-south", "finance", 3, "Development lending and conditionality spread globally", "Prêts au développement et conditionnalité se diffusent mondialement")
-    ],
     en: {
       title: "Bretton Woods system",
       summary: "Postwar institutions create a new global monetary order around the dollar, the IMF, and the World Bank.",
@@ -550,15 +854,6 @@ const events = [
     year: "1971–1980s",
     category: "finance",
     tags: ["neoliberalism", "debt", "deregulation"],
-    places: [
-      place("washington", "Washington, D.C.", "Washington", 38.90, -77.04, "Dollar policy, IMF, World Bank, U.S. power.", "Politique du dollar, FMI, Banque mondiale, pouvoir américain."),
-      place("london", "London", "Londres", 51.51, -0.13, "Financial deregulation and markets.", "Dérégulation financière et marchés."),
-      place("latin-america", "Latin American debt crisis", "Crise de la dette latino-américaine", -15, -60, "Debt, austerity, and structural adjustment.", "Dette, austérité et ajustement structurel.")
-    ],
-    flows: [
-      flow("washington", "london", "finance", 3, "Financial deregulation links dollar power and global markets", "La dérégulation financière relie pouvoir du dollar et marchés mondiaux"),
-      flow("washington", "latin-america", "finance", 4, "Debt discipline and adjustment policies spread", "Discipline de la dette et politiques d’ajustement se diffusent")
-    ],
     en: {
       title: "Neoliberal turn and financial globalization",
       summary: "The dollar leaves gold convertibility, capital controls weaken, deregulation grows, and market discipline becomes global policy.",
@@ -588,15 +883,6 @@ const events = [
     year: "1995",
     category: "trade",
     tags: ["WTO", "globalization", "trade rules"],
-    places: [
-      place("geneva", "Geneva / WTO", "Genève / OMC", 46.20, 6.14, "World trade rules and dispute system.", "Règles commerciales mondiales et règlement des différends."),
-      place("shenzhen", "Shenzhen / export manufacturing", "Shenzhen / production d’exportation", 22.54, 114.06, "Export manufacturing and global supply chains.", "Production d’exportation et chaînes mondiales."),
-      place("mexico-border", "Mexico border factories", "Usines frontalières mexicaines", 31.74, -106.49, "Maquiladora production and trade integration.", "Production maquiladora et intégration commerciale.")
-    ],
-    flows: [
-      flow("geneva", "shenzhen", "trade", 3, "Trade rules support global manufacturing chains", "Les règles commerciales soutiennent les chaînes manufacturières mondiales"),
-      flow("geneva", "mexico-border", "trade", 3, "Trade agreements reorganize labor and production zones", "Les accords commerciaux réorganisent les zones de travail et de production")
-    ],
     en: {
       title: "World Trade Organization begins",
       summary: "The WTO strengthens global trade rules, intellectual property regimes, and dispute systems for a more integrated world market.",
@@ -626,15 +912,6 @@ const events = [
     year: "2008",
     category: "finance",
     tags: ["crisis", "banks", "debt"],
-    places: [
-      place("new-york", "New York / Wall Street", "New York / Wall Street", 40.71, -74.01, "Financial crisis epicenter.", "Épicentre de la crise financière."),
-      place("london", "London", "Londres", 51.51, -0.13, "Global banking transmission.", "Transmission bancaire mondiale."),
-      place("reykjavik", "Iceland", "Islande", 64.15, -21.94, "Banking collapse shock.", "Choc d’effondrement bancaire.")
-    ],
-    flows: [
-      flow("new-york", "london", "finance", 4, "Mortgage finance crisis spreads through global banking", "La crise du crédit immobilier se diffuse par la banque mondiale"),
-      flow("london", "reykjavik", "finance", 3, "Interconnected banking collapses expose systemic fragility", "Les effondrements bancaires interconnectés exposent la fragilité systémique")
-    ],
     en: {
       title: "Global financial crisis",
       summary: "A crisis centered on mortgage finance and banking spreads globally, exposing the fragility of deregulated financial capitalism.",
@@ -664,17 +941,6 @@ const events = [
     year: "2010s–2020s",
     category: "finance",
     tags: ["platforms", "data", "gig work"],
-    places: [
-      place("silicon-valley", "Silicon Valley", "Silicon Valley", 37.39, -122.08, "Platform firms, venture capital, data extraction.", "Plateformes, capital-risque, extraction de données."),
-      place("shenzhen", "Shenzhen", "Shenzhen", 22.54, 114.06, "Hardware manufacturing and logistics.", "Production matérielle et logistique."),
-      place("bangalore", "Bangalore", "Bangalore", 12.97, 77.59, "Software labor and outsourced services.", "Travail logiciel et services externalisés."),
-      place("global-users", "Global users", "Utilisateurs mondiaux", 20, 0, "Attention, data, and platform dependence.", "Attention, données et dépendance aux plateformes.")
-    ],
-    flows: [
-      flow("global-users", "silicon-valley", "finance", 4, "Data and attention become monetized assets", "Données et attention deviennent des actifs monétisés"),
-      flow("silicon-valley", "shenzhen", "industry", 3, "Platform capitalism depends on hardware supply chains", "Le capitalisme de plateforme dépend des chaînes matérielles"),
-      flow("silicon-valley", "bangalore", "labor", 3, "Digital labor and outsourcing support platform growth", "Le travail numérique et l’externalisation soutiennent la croissance des plateformes")
-    ],
     en: {
       title: "Platform capitalism and data extraction",
       summary: "Digital platforms turn data, attention, logistics, cloud infrastructure, and gig work into new engines of accumulation.",
@@ -699,49 +965,264 @@ const events = [
         critical: "L’usine n’a pas disparu. Elle s’est distribuée dans les entrepôts, téléphones, applications, serveurs et contrôles algorithmiques."
       }
     }
+  },
+  {
+    year: "2020s",
+    category: "finance",
+    tags: ["AI", "climate", "green finance"],
+    en: {
+      title: "Green finance, AI, and crisis capitalism",
+      summary: "Climate crisis, AI infrastructure, carbon markets, supply-chain shocks, and geopolitical conflict reshape capitalist accumulation.",
+      detail: "Current capitalism is increasingly shaped by climate adaptation, energy transition minerals, carbon markets, automation, AI, data centers, and security politics.",
+      contexts: {
+        built: "It extends accumulation into carbon accounting, energy transition minerals, automation, cloud infrastructure, and predictive systems.",
+        benefited: "Tech giants, energy firms, mining companies, asset managers, defense industries, and infrastructure investors seek new frontiers.",
+        paid: "Workers, Indigenous communities, the Global South, migrants, and ecosystems often carry the costs of transition and crisis.",
+        link: "Capitalism adapts to crisis by creating new markets from crisis itself.",
+        critical: "The question is whether climate transition breaks extractive capitalism or simply updates it."
+      }
+    },
+    fr: {
+      title: "Finance verte, IA et capitalisme de crise",
+      summary: "Crise climatique, infrastructures d’IA, marchés carbone, chocs logistiques et conflits géopolitiques reconfigurent l’accumulation capitaliste.",
+      detail: "Le capitalisme actuel est de plus en plus façonné par l’adaptation climatique, les minerais de transition énergétique, les marchés carbone, l’automatisation, l’IA, les data centers et les politiques sécuritaires.",
+      contexts: {
+        built: "Il étend l’accumulation vers la comptabilité carbone, les minerais de transition, l’automatisation, le cloud et les systèmes prédictifs.",
+        benefited: "Géants technologiques, firmes énergétiques, compagnies minières, gestionnaires d’actifs, industries de défense et investisseurs d’infrastructure cherchent de nouvelles frontières.",
+        paid: "Travailleurs, peuples autochtones, Sud global, migrants et écosystèmes portent souvent les coûts de la transition et de la crise.",
+        link: "Le capitalisme s’adapte à la crise en créant de nouveaux marchés à partir de la crise elle-même.",
+        critical: "La question est de savoir si la transition climatique rompt avec le capitalisme extractif ou le met simplement à jour."
+      }
+    }
   }
 ];
 
-let currentLang = localStorage.getItem("capitalismMapLang") || "en";
+const filters = ["All", "trade", "finance", "slavery", "industry", "state", "labor"];
+
+let currentLang = localStorage.getItem("capitalismTimelineLang") || "en";
 let activeFilter = "All";
 let selectedIndex = 0;
 let activeContext = "built";
-let selectedPlaceId = null;
-let flowsVisible = true;
-let placesVisible = true;
 
-const map = L.map("map", { worldCopyJump: true, zoomControl: true }).setView([20, 10], 2);
-
-L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-  attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
-}).addTo(map);
-
-const timelineButtonsEl = document.getElementById("timelineButtons");
-const bottomTimelineEl = document.getElementById("bottomTimeline");
+const timelineTrack = document.getElementById("timelineTrack");
 const filtersEl = document.getElementById("filters");
-const eventYearEl = document.getElementById("eventYear");
-const eventTitleEl = document.getElementById("eventTitle");
-const eventSummaryEl = document.getElementById("eventSummary");
-const eventTagsEl = document.getElementById("eventTags");
-const placeListEl = document.getElementById("placeList");
-const contextTabsEl = document.getElementById("contextTabs");
-const contextBoxEl = document.getElementById("contextBox");
-const toggleFlowsBtn = document.getElementById("toggleFlowsBtn");
-const togglePlacesBtn = document.getElementById("togglePlacesBtn");
+const searchEl = document.getElementById("search");
+const detailKicker = document.getElementById("detailKicker");
+const detailTitle = document.getElementById("detailTitle");
+const detailText = document.getElementById("detailText");
+const contextTabs = document.getElementById("contextTabs");
+const contextBox = document.getElementById("contextBox");
+const systemCopy = document.getElementById("systemCopy");
 
-let placeLayers = [];
-let flowLayers = [];
+const mapCaption = document.getElementById("mapCaption");
+const mapHost = document.getElementById("eventMap");
+const NS = "http://www.w3.org/2000/svg";
+const MAP_W = 1000, MAP_H = 520;
+let mapViewport = null, mapSvg = null, mapInfo = null;
+let mapTransform = { x: 0, y: 0, scale: 1 };
+let currentMapIndex = -1;
+let dragState = null;
 
+function makeSVG(tag, attrs = {}) {
+  const el = document.createElementNS(NS, tag);
+  Object.entries(attrs).forEach(([key, value]) => el.setAttribute(key, String(value)));
+  return el;
+}
+function project(lng, lat) { return [(lng + 180) * MAP_W / 360, (90 - lat) * MAP_H / 180]; }
+function getRings(geometry) {
+  if (!geometry) return [];
+  if (geometry.type === "Polygon") return geometry.coordinates;
+  if (geometry.type === "MultiPolygon") return geometry.coordinates.flatMap(poly => poly);
+  return [];
+}
+function geoPath(geometry) {
+  return getRings(geometry).map(ring => ring.map((pt, i) => {
+    const [x,y] = project(pt[0],pt[1]);
+    return `${i === 0 ? 'M':'L'}${x.toFixed(2)},${y.toFixed(2)}`;
+  }).join(' ')+' Z').join(' ');
+}
+function applyMapTransform() {
+  if (!mapViewport) return;
+  mapViewport.setAttribute('transform', `translate(${mapTransform.x} ${mapTransform.y}) scale(${mapTransform.scale})`);
+  // Labels keep a readable size independently of automatic or manual map zoom.
+  mapViewport.querySelectorAll('.site-visual').forEach(visual => {
+    visual.setAttribute('transform', `scale(${1 / mapTransform.scale})`);
+  });
+  keepMapLabelsInside();
+}
+function keepMapLabelsInside() {
+  // Keep full SVG labels inside the fixed viewBox even after adaptive zoom and panning.
+  const margin = 13;
+  const labels = [...mapViewport.querySelectorAll('.site-label')];
+  labels.forEach((label, i) => {
+    const site = label.closest('.vector-site');
+    const hit = site.getAttribute('transform').match(/translate\(([-\d.]+)\s+([-\d.]+)\)/);
+    if (!hit) return;
+    const sx = mapTransform.x + Number(hit[1]) * mapTransform.scale;
+    const sy = mapTransform.y + Number(hit[2]) * mapTransform.scale;
+    const naturalX = i % 2 ? -17 : 17;
+    const naturalY = i % 3 === 2 ? 33 : -18;
+    label.setAttribute('text-anchor', i % 2 ? 'end' : 'start');
+    label.setAttribute('x', naturalX);
+    label.setAttribute('y', naturalY);
+    const bbox = label.getBBox();
+    let shiftX = 0;
+    const left = sx + bbox.x, right = left + bbox.width;
+    if (left < margin) shiftX = margin - left;
+    if (right + shiftX > MAP_W - margin) shiftX += MAP_W - margin - (right + shiftX);
+    let shiftY = 0;
+    const top = sy + bbox.y, bottom = top + bbox.height;
+    if (top < margin) shiftY = margin - top;
+    if (bottom + shiftY > MAP_H - margin) shiftY += MAP_H - margin - (bottom + shiftY);
+    label.setAttribute('x', naturalX + shiftX);
+    label.setAttribute('y', naturalY + shiftY);
+  });
+}
+function localMapPos(event) {
+  const rect = mapSvg.getBoundingClientRect();
+  return [(event.clientX - rect.left) * MAP_W / rect.width, (event.clientY - rect.top) * MAP_H / rect.height];
+}
+function zoomMap(factor, px=MAP_W/2, py=MAP_H/2) {
+  const newScale = Math.max(1, Math.min(12, mapTransform.scale * factor));
+  const ratio = newScale / mapTransform.scale;
+  mapTransform.x = px - (px - mapTransform.x) * ratio;
+  mapTransform.y = py - (py - mapTransform.y) * ratio;
+  mapTransform.scale = newScale;
+  applyMapTransform();
+}
+function initEventMap() {
+  if (mapSvg) return;
+  mapHost.replaceChildren();
+  mapSvg = makeSVG('svg', { viewBox: `0 0 ${MAP_W} ${MAP_H}`, preserveAspectRatio: 'xMidYMid meet', role:'img','aria-label':'Offline vector world map with historical sites' });
+  const defs=makeSVG('defs');
+  const clip=makeSVG('clipPath',{id:'world-viewport-clip'});
+  clip.append(makeSVG('rect',{x:0,y:0,width:MAP_W,height:MAP_H}));
+  defs.append(clip); mapSvg.append(defs);
+  mapSvg.append(makeSVG('rect', { x:0, y:0, width:MAP_W, height:MAP_H, class:'map-ocean' }));
+  mapViewport=makeSVG('g', {'clip-path':'url(#world-viewport-clip)'});
+  const land=makeSVG('g',{class:'land-layer'});
+  WORLD_GEOJSON.features.forEach(feature => {
+    land.append(makeSVG('path',{d:geoPath(feature.geometry),class:'country-shape','fill-rule':'evenodd'}));
+  });
+  mapViewport.append(land);
+  mapViewport.append(makeSVG('g',{id:'event-routes'}));
+  mapViewport.append(makeSVG('g',{id:'event-points'}));
+  mapSvg.append(mapViewport);
+  mapHost.append(mapSvg);
+  mapInfo=document.createElement('div'); mapInfo.className='vector-map-tooltip'; mapInfo.hidden=true;
+  mapHost.append(mapInfo);
+  const nav=document.createElement('div'); nav.className='vector-zoom';
+  nav.innerHTML='<button type="button" aria-label="Zoom in">+</button><button type="button" aria-label="Zoom out">−</button><button type="button" aria-label="Reset map">⌂</button>';
+  mapHost.append(nav);
+  nav.children[0].onclick=()=>zoomMap(1.5);
+  nav.children[1].onclick=()=>zoomMap(1/1.5);
+  nav.children[2].onclick=()=>fitSelectedMap();
+  mapSvg.addEventListener('wheel', e=>{
+    e.preventDefault(); const [x,y]=localMapPos(e); zoomMap(e.deltaY<0?1.18:1/1.18,x,y);
+  },{passive:false});
+  mapSvg.addEventListener('pointerdown',e=>{
+    if(e.button!==0) return;
+    const [x,y]=localMapPos(e); dragState={startX:x,startY:y,originX:mapTransform.x,originY:mapTransform.y};
+    mapSvg.setPointerCapture(e.pointerId);
+  });
+  mapSvg.addEventListener('pointermove',e=>{
+    if(!dragState) return;
+    const [x,y]=localMapPos(e);
+    mapTransform.x=dragState.originX+(x-dragState.startX);
+    mapTransform.y=dragState.originY+(y-dragState.startY);
+    applyMapTransform();
+  });
+  mapSvg.addEventListener('pointerup',()=>{dragState=null;});
+  mapSvg.addEventListener('pointercancel',()=>{dragState=null;});
+  mapHost.addEventListener('keydown',e=>{
+    if(e.key==='+'||e.key==='=') zoomMap(1.4);
+    if(e.key==='-') zoomMap(1/1.4);
+    if(e.key==='Escape') hideMapTooltip();
+  });
+}
+function showMapTooltip(e,title,role){
+  mapInfo.replaceChildren();
+  const heading=document.createElement('strong'); heading.textContent=title;
+  const description=document.createElement('div'); description.textContent=role;
+  mapInfo.append(heading,description);
+  mapInfo.hidden=false;
+}
+function hideMapTooltip(){ if(mapInfo) mapInfo.hidden=true; }
+function mapCategoryColor(category) {
+  return ({trade:'#5bc0eb',finance:'#f9c74f',state:'#9b5de5',slavery:'#ef476f',labor:'#06d6a0',industry:'#f9844a'})[category]||'#f9c74f';
+}
+function routeCurve(a,b){
+  let [x1,y1]=project(a.lng,a.lat),[x2,y2]=project(b.lng,b.lat);
+  let delta=x2-x1;
+  if(delta>500) x2-=1000;
+  if(delta< -500) x2+=1000;
+  const lift=Math.min(80,Math.max(15,Math.abs(x2-x1)*0.12));
+  return `M${x1},${y1} Q${(x1+x2)/2},${(y1+y2)/2-lift} ${x2},${y2}`;
+}
+function fitSelectedMap(){
+  const data=eventMaps[currentMapIndex];
+  if(!data||!data.places.length){mapTransform={x:0,y:0,scale:1};applyMapTransform();return;}
+  const coords=data.places.map(p=>project(p.lng,p.lat));
+  const xvals=coords.map(p=>p[0]),yvals=coords.map(p=>p[1]);
+  const minX=Math.min(...xvals),maxX=Math.max(...xvals),minY=Math.min(...yvals),maxY=Math.max(...yvals);
+  // Fit close city clusters more tightly; keep intercontinental events in full view.
+  const width=Math.max(maxX-minX,14),height=Math.max(maxY-minY,10);
+  const scale=Math.max(1,Math.min(10, Math.min(760/width,370/height)));
+  const centerX=(minX+maxX)/2,centerY=(minY+maxY)/2;
+  mapTransform={x:MAP_W/2-centerX*scale,y:MAP_H/2-centerY*scale,scale};
+  applyMapTransform();
+}
+function renderEventMap(index){
+  initEventMap(); currentMapIndex=index;
+  const routes=mapSvg.querySelector('#event-routes');
+  const points=mapSvg.querySelector('#event-points');
+  routes.replaceChildren();points.replaceChildren();hideMapTooltip();
+  const data=eventMaps[index];
+  if(!data){mapCaption.textContent=t('mapCaptionDefault');fitSelectedMap();return;}
+  const byId=Object.fromEntries(data.places.map(p=>[p.id,p]));
+  data.flows.forEach(flow=>{
+    const a=byId[flow.from],b=byId[flow.to];if(!a||!b)return;
+    const line=makeSVG('path',{d:routeCurve(a,b),class:'vector-route',stroke:mapCategoryColor(flow.category)});
+    line.addEventListener('click',e=>{e.stopPropagation();showMapTooltip(e,flow.label[currentLang],'');});
+    routes.append(line);
+  });
+  data.places.forEach((p, i)=>{
+    const [x,y]=project(p.lng,p.lat);
+    const g=makeSVG('g',{transform:`translate(${x} ${y})`,class:'vector-site',tabindex:0,role:'button','aria-label':p.name[currentLang]});
+    // Inverse-scale the marker AND label so neither balloons or vanishes when zooming.
+    const visual = makeSVG('g',{class:'site-visual'});
+    visual.append(makeSVG('circle',{r:14,class:'site-hit-area',fill:'transparent'}));
+    visual.append(makeSVG('circle',{r:9,fill:mapCategoryColor(events[index].category),opacity:.35}));
+    visual.append(makeSVG('circle',{r:5.1,fill:mapCategoryColor(events[index].category),stroke:'#f7f3e9','stroke-width':1.8}));
+    // Permanent high-contrast bilingual labels, drawn at a readable screen size.
+    const label = makeSVG('text', {x: i % 2 ? -17 : 17, y: i % 3 === 2 ? 33 : -18,
+      class:'site-label', 'text-anchor': i % 2 ? 'end' : 'start'});
+    label.textContent = p.name[currentLang].length > 24 ? p.name[currentLang].slice(0, 22) + '…' : p.name[currentLang];
+    visual.append(label);
+    g.append(visual);
+    const select=e=>{e.stopPropagation();showMapTooltip(e,p.name[currentLang],p.role[currentLang]);};
+    g.addEventListener('click',select);
+    g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(e);}});
+    points.append(g);
+  });
+  mapCaption.textContent=t('mapCaptionPlaces').replace('{places}',data.places.length).replace('{flows}',data.flows.length);
+  fitSelectedMap();
+}
 function t(key) {
   return i18n[currentLang][key];
 }
 
-function eventText(event) {
+function localizedYear(year) {
+  return currentLang === "fr" ? year.replace(/BCE/g, "AV J-C") : year;
+}
+
+function currentEventText(event) {
   return event[currentLang] || event.en;
 }
 
 function translateStaticUI() {
   document.documentElement.lang = currentLang;
+
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.dataset.i18n;
     if (i18n[currentLang][key]) {
@@ -749,12 +1230,11 @@ function translateStaticUI() {
     }
   });
 
+  searchEl.placeholder = searchEl.dataset[`placeholder${currentLang === "fr" ? "Fr" : "En"}`];
+
   document.querySelectorAll(".lang-btn").forEach(button => {
     button.classList.toggle("active", button.dataset.lang === currentLang);
   });
-
-  toggleFlowsBtn.textContent = flowsVisible ? t("toggleFlows") : t("toggleFlowsOff");
-  togglePlacesBtn.textContent = placesVisible ? t("togglePlaces") : t("togglePlacesOff");
 }
 
 function labelFilter(filter) {
@@ -762,36 +1242,13 @@ function labelFilter(filter) {
   return i18n[currentLang].filterLabels[filter] || filter;
 }
 
-function labelContext(key) {
-  return i18n[currentLang].contextLabels[key] || key;
-}
-
-function visibleEventIndexes() {
-  return events
-    .map((event, index) => ({ event, index }))
-    .filter(item => activeFilter === "All" || item.event.category === activeFilter);
-}
-
-function categoryColor(category) {
-  return {
-    trade: "#5bc0eb",
-    finance: "#f9c74f",
-    slavery: "#ef476f",
-    industry: "#f9844a",
-    state: "#9b5de5",
-    labor: "#06d6a0"
-  }[category] || "#f9c74f";
-}
-
-function markerRadius(category) {
-  return category === "slavery" || category === "state" ? 10 : 8;
+function labelContext(contextKey) {
+  return i18n[currentLang].contextLabels[contextKey] || contextKey;
 }
 
 function renderFilters() {
-  const filters = ["All", "trade", "finance", "slavery", "industry", "state", "labor"];
-
   filtersEl.innerHTML = filters.map(filter => `
-    <button class="filter-btn ${filter === activeFilter ? "active" : ""}" data-filter="${filter}">
+    <button class="filter ${filter === activeFilter ? "active" : ""}" data-filter="${filter}">
       ${labelFilter(filter)}
     </button>
   `).join("");
@@ -799,247 +1256,149 @@ function renderFilters() {
   filtersEl.querySelectorAll("button").forEach(button => {
     button.addEventListener("click", () => {
       activeFilter = button.dataset.filter;
-      const visible = visibleEventIndexes();
-      if (!visible.some(item => item.index === selectedIndex) && visible.length) {
-        selectedIndex = visible[0].index;
-      }
-      selectedPlaceId = null;
-      renderAll();
+      const firstMatching = events.findIndex(event => (activeFilter === "All" || event.category === activeFilter) && matchesSearch(event));
+      if (firstMatching >= 0 && !((activeFilter === "All" || events[selectedIndex].category === activeFilter) && matchesSearch(events[selectedIndex]))) selectedIndex = firstMatching;
+      renderFilters();
+      renderTimeline();
+      renderDetail();
     });
   });
 }
 
-function renderTimelineButtons() {
-  const visible = visibleEventIndexes();
+function matchesSearch(event) {
+  const query = searchEl.value.trim().toLowerCase();
+  if (!query) return true;
 
-  timelineButtonsEl.innerHTML = visible.map(({ event, index }) => {
-    const text = eventText(event);
-    return `
-      <button class="timeline-btn ${index === selectedIndex ? "active" : ""}" data-index="${index}">
-        ${event.year}
-      </button>
-    `;
-  }).join("");
-
-  bottomTimelineEl.innerHTML = visible.map(({ event, index }) => {
-    return `
-      <button class="bottom-dot ${index === selectedIndex ? "active" : ""}" data-index="${index}">
-        ${event.year}
-      </button>
-    `;
-  }).join("");
-
-  [...timelineButtonsEl.querySelectorAll("button"), ...bottomTimelineEl.querySelectorAll("button")].forEach(button => {
-    button.addEventListener("click", () => {
-      selectedIndex = Number(button.dataset.index);
-      selectedPlaceId = null;
-      activeContext = "built";
-      renderAll();
-    });
+  const eventText = currentEventText(event);
+  const contextValues = Object.values(eventText.contexts || {});
+  const translatedTags = event.tags.map(tag => {
+    return i18n[currentLang].filterLabels[tag] || tag;
   });
+
+  const haystack = [
+    event.year,
+    event.category,
+    labelFilter(event.category),
+    eventText.title,
+    eventText.summary,
+    eventText.detail,
+    ...event.tags,
+    ...translatedTags,
+    ...contextValues
+  ].join(" ").toLowerCase();
+
+  return haystack.includes(query);
 }
 
-function renderEventInfo() {
-  const event = events[selectedIndex];
-  const text = eventText(event);
+function renderTimeline() {
+  const oldScroll = timelineTrack.scrollLeft;
+  timelineTrack.innerHTML = "";
 
-  eventYearEl.textContent = `${labelFilter(event.category)} · ${event.year}`;
-  eventTitleEl.textContent = text.title;
-  eventSummaryEl.textContent = text.summary;
-  eventTagsEl.innerHTML = event.tags.map(tag => `<span class="chip">${tag}</span>`).join("");
+  events.forEach((event, index) => {
+    const eventText = currentEventText(event);
+    const visibleByFilter = activeFilter === "All" || event.category === activeFilter;
+    const visibleBySearch = matchesSearch(event);
+
+    const card = document.createElement("article");
+    card.className = `event-card ${event.category} ${index === selectedIndex ? "selected" : ""} ${visibleByFilter && visibleBySearch ? "" : "hidden"}`;
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
+
+    card.innerHTML = `
+      <div class="year">${localizedYear(event.year)}</div>
+      <h3>${eventText.title}</h3>
+      <p>${eventText.summary}</p>
+      <div class="tags">${event.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
+    `;
+
+    card.addEventListener("click", () => selectEvent(index));
+    card.addEventListener("keydown", eventKey => {
+      if (eventKey.key === "Enter" || eventKey.key === " ") selectEvent(index);
+    });
+
+    timelineTrack.appendChild(card);
+  });
+  timelineTrack.scrollLeft = oldScroll;
+  updateNavigation();
 }
 
-function renderContext() {
-  const event = events[selectedIndex];
-  const text = eventText(event);
-  const contextKeys = Object.keys(text.contexts);
+function updateNavigation() {
+  const visible = [...timelineTrack.querySelectorAll(".event-card:not(.hidden)")];
+  const activePosition = visible.findIndex(card => card.classList.contains("selected"));
+  document.getElementById("prevEvent").disabled = activePosition <= 0;
+  document.getElementById("nextEvent").disabled = activePosition < 0 || activePosition >= visible.length - 1;
+  document.getElementById("eventCount").textContent = visible.length ? `${Math.max(1, activePosition + 1)} / ${visible.length}` : "0 / 0";
+}
+function moveEvent(direction) {
+  const visibleIndexes = events.map((event, index) => ({event,index})).filter(({event}) =>
+    (activeFilter === "All" || event.category === activeFilter) && matchesSearch(event)
+  ).map(item => item.index);
+  const position = visibleIndexes.indexOf(selectedIndex);
+  const target = visibleIndexes[position + direction];
+  if (target !== undefined) selectEvent(target);
+}
+document.getElementById("prevEvent").addEventListener("click", () => moveEvent(-1));
+document.getElementById("nextEvent").addEventListener("click", () => moveEvent(1));
 
-  if (!contextKeys.includes(activeContext)) {
-    activeContext = contextKeys[0];
+function selectEvent(index) {
+  selectedIndex = index;
+  activeContext = "built";
+  renderTimeline();
+  renderDetail();
+  const selectedCard = timelineTrack.querySelector(".event-card.selected");
+  if (selectedCard) {
+    timelineTrack.scrollTo({ left: selectedCard.offsetLeft - timelineTrack.offsetLeft - 12, behavior: "smooth" });
   }
+}
 
-  contextTabsEl.innerHTML = contextKeys.map(key => `
-    <button class="context-tab ${key === activeContext ? "active" : ""}" data-context="${key}">
-      ${labelContext(key)}
+function renderDetail() {
+  const event = events[selectedIndex];
+  const eventText = currentEventText(event);
+
+  detailKicker.textContent = `${labelFilter(event.category)} · ${localizedYear(event.year)}`;
+  detailTitle.textContent = `${localizedYear(event.year)} · ${eventText.title}`;
+  detailText.textContent = eventText.detail;
+  if (systemCopy) systemCopy.textContent = eventText.summary;
+
+  const contextNames = Object.keys(eventText.contexts);
+
+  contextTabs.innerHTML = contextNames.map(name => `
+    <button class="context-tab ${name === activeContext ? "active" : ""}" data-context="${name}">
+      ${labelContext(name)}
     </button>
   `).join("");
 
-  contextBoxEl.textContent = text.contexts[activeContext];
+  contextBox.textContent = eventText.contexts[activeContext];
+  renderEventMap(selectedIndex);
 
-  contextTabsEl.querySelectorAll("button").forEach(button => {
+  contextTabs.querySelectorAll("button").forEach(button => {
     button.addEventListener("click", () => {
       activeContext = button.dataset.context;
-      renderContext();
+      renderDetail();
     });
   });
-}
-
-function renderPlaceList() {
-  const event = events[selectedIndex];
-
-  placeListEl.innerHTML = event.places.map(placeItem => `
-    <article class="place-card ${selectedPlaceId === placeItem.id ? "active" : ""}" data-place="${placeItem.id}">
-      <div class="place-card-title">${placeItem.name[currentLang]}</div>
-      <div class="place-card-text">${placeItem.role[currentLang]}</div>
-    </article>
-  `).join("");
-
-  placeListEl.querySelectorAll(".place-card").forEach(card => {
-    card.addEventListener("click", () => {
-      selectedPlaceId = card.dataset.place;
-      const placeItem = event.places.find(p => p.id === selectedPlaceId);
-      if (placeItem) {
-        map.flyTo([placeItem.lat, placeItem.lng], Math.max(map.getZoom(), 4), { duration: 0.9 });
-        const layer = placeLayers.find(item => item.placeId === placeItem.id);
-        if (layer) layer.marker.openPopup();
-      }
-      renderPlaceList();
-    });
-  });
-}
-
-function clearMapLayers() {
-  placeLayers.forEach(item => map.removeLayer(item.marker));
-  flowLayers.forEach(layer => map.removeLayer(layer));
-  placeLayers = [];
-  flowLayers = [];
-}
-
-function popupForPlace(event, placeItem) {
-  return `
-    <div class="popup-title">${placeItem.name[currentLang]}</div>
-    <div class="popup-meta">${event.year} · ${eventText(event).title}</div>
-    <div class="popup-text">${placeItem.role[currentLang]}</div>
-  `;
-}
-
-function popupForFlow(event, flowItem) {
-  return `
-    <div class="popup-title">${flowItem.label[currentLang]}</div>
-    <div class="popup-meta">${event.year} · ${labelFilter(flowItem.category)}</div>
-    <div class="popup-text">${eventText(event).summary}</div>
-  `;
-}
-
-function getBezierPoints(start, end) {
-  const [lat1, lng1] = start;
-  const [lat2, lng2] = end;
-  const midLat = (lat1 + lat2) / 2;
-  const midLng = (lng1 + lng2) / 2;
-  const dx = lng2 - lng1;
-  const dy = lat2 - lat1;
-  const distance = Math.sqrt(dx * dx + dy * dy) || 1;
-  const curve = Math.min(22, Math.max(6, distance * 0.18));
-  const controlLat = midLat + (dx / distance) * curve;
-  const controlLng = midLng - (dy / distance) * curve;
-
-  const points = [];
-  for (let t = 0; t <= 1.001; t += 0.035) {
-    const lat = (1 - t) * (1 - t) * lat1 + 2 * (1 - t) * t * controlLat + t * t * lat2;
-    const lng = (1 - t) * (1 - t) * lng1 + 2 * (1 - t) * t * controlLng + t * t * lng2;
-    points.push([lat, lng]);
-  }
-
-  return points;
-}
-
-function renderMap() {
-  clearMapLayers();
-
-  const event = events[selectedIndex];
-  const placeMap = new Map(event.places.map(placeItem => [placeItem.id, placeItem]));
-  const boundsPoints = [];
-
-  if (flowsVisible) {
-    event.flows.forEach(flowItem => {
-      const fromPlace = placeMap.get(flowItem.from);
-      const toPlace = placeMap.get(flowItem.to);
-      if (!fromPlace || !toPlace) return;
-
-      const line = L.polyline(
-        getBezierPoints([fromPlace.lat, fromPlace.lng], [toPlace.lat, toPlace.lng]),
-        {
-          className: `flow-line ${flowItem.category} intensity-${flowItem.intensity}`,
-          interactive: true
-        }
-      ).addTo(map);
-
-      line.bindPopup(popupForFlow(event, flowItem));
-      flowLayers.push(line);
-      boundsPoints.push([fromPlace.lat, fromPlace.lng], [toPlace.lat, toPlace.lng]);
-    });
-  }
-
-  if (placesVisible) {
-    event.places.forEach(placeItem => {
-      const marker = L.circleMarker([placeItem.lat, placeItem.lng], {
-        radius: markerRadius(event.category),
-        color: categoryColor(event.category),
-        fillColor: categoryColor(event.category),
-        fillOpacity: 0.86,
-        weight: 2
-      }).addTo(map);
-
-      marker.bindPopup(popupForPlace(event, placeItem));
-
-      marker.on("click", () => {
-        selectedPlaceId = placeItem.id;
-        renderPlaceList();
-      });
-
-      placeLayers.push({ placeId: placeItem.id, marker });
-      boundsPoints.push([placeItem.lat, placeItem.lng]);
-    });
-  }
-
-  if (boundsPoints.length) {
-    const bounds = L.latLngBounds(boundsPoints);
-    map.fitBounds(bounds.pad(0.36), { padding: [54, 54] });
-
-    if (boundsPoints.length === 1) {
-      map.setZoom(4);
-    }
-  } else {
-    map.setView([20, 10], 2);
-  }
-}
-
-function renderToggles() {
-  toggleFlowsBtn.classList.toggle("active", flowsVisible);
-  togglePlacesBtn.classList.toggle("active", placesVisible);
-  toggleFlowsBtn.textContent = flowsVisible ? t("toggleFlows") : t("toggleFlowsOff");
-  togglePlacesBtn.textContent = placesVisible ? t("togglePlaces") : t("togglePlacesOff");
-}
-
-function renderAll() {
-  translateStaticUI();
-  renderFilters();
-  renderTimelineButtons();
-  renderEventInfo();
-  renderPlaceList();
-  renderContext();
-  renderToggles();
-  renderMap();
 }
 
 function setLanguage(lang) {
   currentLang = lang;
-  localStorage.setItem("capitalismMapLang", lang);
-  renderAll();
+  localStorage.setItem("capitalismTimelineLang", currentLang);
+  translateStaticUI();
+  renderFilters();
+  renderTimeline();
+  renderDetail();
 }
 
 document.querySelectorAll(".lang-btn").forEach(button => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
-toggleFlowsBtn.addEventListener("click", () => {
-  flowsVisible = !flowsVisible;
-  renderAll();
+searchEl.addEventListener("input", () => {
+  const first = events.findIndex(e => (activeFilter === "All" || e.category === activeFilter) && matchesSearch(e));
+  if (first !== -1 && !matchesSearch(events[selectedIndex])) selectedIndex = first;
+  renderTimeline(); renderDetail();
 });
 
-togglePlacesBtn.addEventListener("click", () => {
-  placesVisible = !placesVisible;
-  renderAll();
-});
-
-renderAll();
+translateStaticUI();
+renderFilters();
+renderTimeline();
+renderDetail();

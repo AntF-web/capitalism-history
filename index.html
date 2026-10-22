@@ -4,104 +4,162 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>History of Capitalism — Interactive World Map</title>
+  <title>History of Capitalism — Timeline Focus</title>
   <meta
     name="description"
-    content="A bilingual interactive chronological world map of the historical events, places, and flows that helped build capitalism."
+    content="A bilingual interactive critical timeline of historical events, institutions, markets, banks, slavery, colonialism, industry, and finance that shaped capitalism."
   />
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <aside class="sidebar">
+  <header class="hero">
     <div class="language-switcher" aria-label="Language switcher">
       <button class="lang-btn active" data-lang="en">EN</button>
       <button class="lang-btn" data-lang="fr">FR</button>
     </div>
 
-    <div class="sidebar-inner">
+    <div class="hero-copy">
       <div class="eyebrow"><span class="pulse"></span> <span data-i18n="eyebrow">Critical economic history</span></div>
 
       <h1>
-        <span data-i18n="heroTitleLine1">How Capitalism</span>
+        <span data-i18n="heroTitleLine1">How Capitalism</span><br />
         <span class="outline" data-i18n="heroTitleLine2">Was Built</span>
       </h1>
 
-      <p class="subtitle" data-i18n="heroLead">
-        A chronological world map of markets, banks, colonial extraction, slavery, factories,
-        corporations, debt, finance, and digital platforms.
+      <p class="lead" data-i18n="heroLead">
+        A chronological timeline of markets, banks, colonial extraction, slavery, factories,
+        corporations, debt, finance, and digital platforms. This is not a story of one invention,
+        but of many institutions and violences becoming one world system.
       </p>
 
-      <section class="panel">
-        <h2 data-i18n="timelineTitle">Chronological events</h2>
-        <div class="timeline-buttons" id="timelineButtons"></div>
-      </section>
+      <div class="hero-actions">
+        <a href="#timeline" class="button primary" data-i18n="exploreButton">Explore timeline ↓</a>
+      </div>
+    </div>
+  </header>
 
-      <section class="panel">
-        <h2 data-i18n="filtersTitle">System filter</h2>
-        <div class="filters" id="filters"></div>
-      </section>
+  <nav class="controls-wrap" aria-label="Timeline controls">
+    <div class="controls">
+      <div class="filters" id="filters"></div>
 
-      <section class="panel">
-        <h2 data-i18n="mapControlsTitle">Map layers</h2>
-        <div class="toggle-row">
-          <button class="toggle-btn active" id="toggleFlowsBtn" data-i18n="toggleFlows">Flows on</button>
-          <button class="toggle-btn active" id="togglePlacesBtn" data-i18n="togglePlaces">Places on</button>
-        </div>
-        <p class="small-note" data-i18n="mapNote">
-          Flows are interpretive historical routes, not exact shipping paths.
+      <input
+        class="search"
+        id="search"
+        type="search"
+        data-placeholder-en="Search: slavery, bank, factory, colonialism..."
+        data-placeholder-fr="Rechercher : esclavage, banque, usine, colonialisme..."
+        placeholder="Search: slavery, bank, factory, colonialism..."
+      />
+    </div>
+  </nav>
+
+  <main class="app">
+    <section id="timeline">
+      <div class="section-title">
+        <h2 data-i18n="timelineTitle">Chronological timeline</h2>
+        <p data-i18n="timelineIntro">
+          Click an event to open its historical, labor, colonial, and financial context.
+          Filter by system layer or search by keyword.
         </p>
-      </section>
+      </div>
 
-      <section class="panel">
-        <h2 data-i18n="selectedEventTitle">Selected event</h2>
-        <div class="event-year" id="eventYear"></div>
-        <div class="event-title" id="eventTitle"></div>
-        <p class="event-summary" id="eventSummary"></p>
-        <div class="meta" id="eventTags"></div>
-      </section>
+      <div class="timeline-navigation">
+        <button type="button" id="prevEvent" class="nav-event" aria-label="Previous event">← <span data-i18n="previous">Previous</span></button>
+        <span id="eventCount" aria-live="polite"></span>
+        <button type="button" id="nextEvent" class="nav-event" aria-label="Next event"><span data-i18n="next">Next</span> →</button>
+      </div>
+      <div class="timeline-shell">
+        <div class="timeline-bg"></div>
+        <div class="timeline" id="timelineTrack" aria-label="Horizontal capitalism history timeline"></div>
+      </div>
 
-      <section class="panel">
-        <h2 data-i18n="selectedPlaceTitle">Places in this event</h2>
-        <div class="place-list" id="placeList"></div>
-      </section>
+      <div class="detail-grid">
+        <aside class="mini-map-panel" id="miniMapPanel">
+          <div class="mini-map-head">
+            <h3 data-i18n="mapTitle">World map</h3>
+            <p id="mapCaption" data-i18n="mapCaptionDefault">Places linked to the selected event.</p>
+          </div>
+          <div id="eventMap" aria-label="Interactive vector world map" role="application" tabindex="0"></div>
+          <div class="map-legend">
+            <span><i class="dot trade"></i><span data-i18n="legendTrade">Trade</span></span>
+            <span><i class="dot finance"></i><span data-i18n="legendFinance">Finance</span></span>
+            <span><i class="dot state"></i><span data-i18n="legendState">State</span></span>
+            <span><i class="dot slavery"></i><span data-i18n="legendSlavery">Slavery</span></span>
+          </div>
+        </aside>
 
-      <section class="panel">
-        <h2 data-i18n="contextTitle">Critical context</h2>
-        <div class="context-tabs" id="contextTabs"></div>
-        <div class="context-box" id="contextBox"></div>
-      </section>
+        <article class="detail-panel" id="detailPanel">
+          <div class="detail-kicker" id="detailKicker">Selected event</div>
+          <h2 id="detailTitle"></h2>
+          <p id="detailText"></p>
 
-      <section class="panel">
-        <h2 data-i18n="legendTitle">Legend</h2>
-        <div class="legend">
-          <div class="legend-row"><span class="legend-dot trade"></span><span data-i18n="legendTrade">Trade / market routes</span></div>
-          <div class="legend-row"><span class="legend-dot finance"></span><span data-i18n="legendFinance">Banking / finance</span></div>
-          <div class="legend-row"><span class="legend-dot slavery"></span><span data-i18n="legendSlavery">Slavery / forced labor</span></div>
-          <div class="legend-row"><span class="legend-dot industry"></span><span data-i18n="legendIndustry">Industry / infrastructure</span></div>
-          <div class="legend-row"><span class="legend-dot state"></span><span data-i18n="legendState">State / empire</span></div>
-          <div class="legend-row"><span class="legend-dot labor"></span><span data-i18n="legendLabor">Labor struggle</span></div>
-        </div>
-      </section>
-    </div>
-  </aside>
+          <div class="context-tabs" id="contextTabs"></div>
+          <div class="context-box" id="contextBox"></div>
+        </article>
 
-  <main class="map-wrap">
-    <div id="map"></div>
+      </div>
+    </section>
 
-    <div class="map-overlay">
-      <h2 data-i18n="overlayTitle">Chronological world map</h2>
-      <p data-i18n="overlayText">
-        Choose an event on the left. The map jumps to its historical places and draws the flows
-        that connect markets, colonies, banks, plantations, factories, and financial centers.
-      </p>
-    </div>
+    <section class="systems-panel" id="systems">
+      <div class="section-title">
+        <h2 data-i18n="layersTitle">System layers</h2>
+        <p data-i18n="layersIntro">
+          Capitalism was built through overlapping layers. Each layer has its own institutions,
+          conflicts, and historical violence.
+        </p>
+      </div>
 
-    <div class="bottom-timeline" id="bottomTimeline" aria-label="Timeline strip"></div>
+      <div class="systems-grid">
+        <article class="layer-card">
+          <div class="layer-icon">⚖️</div>
+          <h3 data-i18n="layerPropertyTitle">Property</h3>
+          <p data-i18n="layerPropertyText">Land, labor, ideas, and resources are turned into ownable and sellable assets.</p>
+        </article>
+
+        <article class="layer-card">
+          <div class="layer-icon">🛳️</div>
+          <h3 data-i18n="layerTradeTitle">Trade</h3>
+          <p data-i18n="layerTradeText">Long-distance trade links local production to global markets and colonial routes.</p>
+        </article>
+
+        <article class="layer-card">
+          <div class="layer-icon">🏦</div>
+          <h3 data-i18n="layerBankingTitle">Banking</h3>
+          <p data-i18n="layerBankingText">Credit, deposits, public debt, and central banks make accumulation scalable.</p>
+        </article>
+
+        <article class="layer-card">
+          <div class="layer-icon">⛓️</div>
+          <h3 data-i18n="layerSlaveryTitle">Slavery</h3>
+          <p data-i18n="layerSlaveryText">Forced labor, plantation economies, and racial domination generate enormous wealth.</p>
+        </article>
+
+        <article class="layer-card">
+          <div class="layer-icon">🏭</div>
+          <h3 data-i18n="layerIndustryTitle">Industry</h3>
+          <p data-i18n="layerIndustryText">Factories reorganize time, labor, machines, cities, and discipline around production.</p>
+        </article>
+
+        <article class="layer-card">
+          <div class="layer-icon">📈</div>
+          <h3 data-i18n="layerFinanceTitle">Finance</h3>
+          <p data-i18n="layerFinanceText">Stocks, bonds, speculation, derivatives, debt, and crises become engines of power.</p>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <footer class="footer">
+    <strong data-i18n="noteLabel">Note:</strong>
+    <span data-i18n="footerNote">
+      This timeline is interpretive and critical. It does not claim that capitalism
+      began at one exact moment. It shows major institutions and historical processes that helped build
+      the capitalist world-system.
+    </span>
+  </footer>
+
+  <script src="./world-data.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>
